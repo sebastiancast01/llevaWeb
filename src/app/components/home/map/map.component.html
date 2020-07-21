@@ -1,0 +1,17 @@
+<agm-map
+  [zoom]="zoom"
+  [streetViewControl]="false"
+  [zoomControl]="false"
+>
+  <agm-direction
+                 [origin]="origin"
+                 [destination]="destination"
+                 [renderOptions]="renderOptions"
+                 [markerOptions]="markerOptions"
+                 (onResponse)="onDrag($event)"
+  >
+
+  </agm-direction>
+
+</agm-map>
+

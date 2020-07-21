@@ -1,0 +1,19 @@
+.mat-expansion-panel-body {
+  padding: 0 15px 16px !important;
+}
+.imagenFondo {
+  position: relative;
+  width: 10px; /* ancho de la imagen OPCIONAL */
+  height: 10px; /* largo de la imagen OPCIONAL */
+}
+.imagenFondo span {
+  position: absolute;
+  left: 0;
+}
+agm-map {
+  width: 500px;
+  height: 200px;
+}
+.mat-h3, .mat-subheading-2, .mat-typography h3 {
+  margin: 0 0 7px !important;
+}

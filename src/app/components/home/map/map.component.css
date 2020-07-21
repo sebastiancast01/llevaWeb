@@ -1,0 +1,49 @@
+.iframe-map{
+  width: 100% !important;
+  height: 700px !important;
+  border: none;
+  margin-bottom: -6px;
+}
+
+.col-map{
+  padding: 0;
+}
+
+.row-contact-det{
+  margin-top: -80px;
+  margin-bottom: -80px;
+}
+
+.contact-align{
+  text-align: center;
+}
+
+.contact-align button{
+  border-radius: 20px;
+  background-color: blue;
+  padding: 25px 25px;
+  text-align: center;
+  margin: 0px 25px;
+  height: 160px;
+  width: 190px;
+  outline: none;
+  z-index: 2;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.contact-align .i-contact{
+  color: white;
+  width: 50px;
+  height: 50px;
+  font-size: 50px;
+}
+
+.contact-align span{
+  font-size: 14px;
+  color: white;
+}
+agm-map {
+  width: 100%;
+  height: 100%;
+}
