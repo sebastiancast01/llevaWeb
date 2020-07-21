@@ -9,12 +9,26 @@ hr {
 .metodopago {
     text-align: center;
     background: #eee;
-    padding: 10px;
 }
 
 .metodopago button {
     background: transparent;
     border: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0 !important;
+}
+
+.metodopago button label {
+    display: block;
+}
+
+.metodopago button img {
+    padding: 5px;
+}
+
+.metodopago button:focus {
+    border: 2px solid rgb(47, 132, 87);
 }
 
 .efectivo,
