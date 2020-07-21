@@ -1,278 +1,274 @@
-<mat-card >
-  <app-header></app-header>
+<mat-card>
+    <app-header></app-header>
 </mat-card>
-<div class="gris" >
-  <div fxLayout="row" fxLayout.lt-md="column"  style="padding: 24px;">
-    <mat-card fxFlex="40" >
-      <div class="background" *ngIf="solicitado==false">
-        <div style="padding-top: 2%; background-color: #2F8457" fxLayout="row" fxLayoutAlign="left ">
-          <div fxFlex="15" fxFlex.lt-md>
-            <img src="assets/home/lleva.png">
-          </div>
-          <div fxFlex="45" fxFlex.lt-md>
-            <p class="description mat-subheading-1" style="color: white; display: inline; padding-left: 10px">
-              En que te podemos ayudar hoy?
-            </p>
-          </div>
-        </div>
-        <div>
-          <br>
-          <div fxLayout="row wrap" fxLayoutAlign="left center" style="width: 100% !important;">
-            <div fxFlex="50" fxFlex.lt-md>
-              <p>Selecciona la ciudad del servicio a solicitar: </p>
-            </div>
-            <div fxFlex="10" fxFlex.lt-md>
-            </div>
-            <div fxFlex="40" fxFlex.lt-md>
-              <mat-form-field appearance="outline">
-                <mat-label>Seleccionar ciudad</mat-label>
-                <mat-select>
-                  <mat-option>
-                    Barranquilla
-                  </mat-option>
-                  <mat-option>
-                    Bogota
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div>
-          <mat-accordion>
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                </mat-panel-title>
-                <mat-panel-description style="  font-weight: bold;">
-                  ¿En dónde recogemos?
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <div fxLayout="column" fxLayoutAlign="left" >
-                <div fxLayout="row wrap" fxLayoutAlign="left center" style="width: 100% !important;">
-                  <div fxFlex="60" fxFlex.lt-md>
-                    <mat-form-field appearance="outline" style="width: 100%">
-                      <mat-icon matSuffix>my_location</mat-icon>
-                      <input matInput
-                             ngx-google-places-autocomplete [options]='options'  #placesRef="ngx-places"
-                             (onAddressChange)="doAddressChangeOrigin($event)">
-                    </mat-form-field>
-                  </div>
-                  <div style="padding-left: 10px;" fxFlex="40" fxFlex.lt-md>
-                    <mat-form-field appearance="outline">
-                      <mat-label>Especificaciones</mat-label>
-                      <input matInput type="text" placeholder="Ofinica 123" [ngModel]="especificaciones" required>
-                    </mat-form-field>
-                  </div>
-                  <div  fxFlex="102" fxFlex.lt-md>
-                    <mat-form-field appearance="outline" style="width: 100%">
-                      <mat-label>Instrucciones</mat-label>
-                      <input  matInput type="text" placeholder="Recoger factura de luz y pagarla" required>
-                    </mat-form-field>
-                  </div>
+<div class="gris">
+    <div fxLayout="row" fxLayout.lt-md="column" style="padding: 24px;">
+        <mat-card fxFlex="40">
+            <div class="background" *ngIf="solicitado==false">
+                <div style="padding-top: 2%; background-color: #2F8457" fxLayout="row" fxLayoutAlign="left ">
+                    <div fxFlex="15" fxFlex.lt-md>
+                        <img src="assets/home/lleva.png">
+                    </div>
+                    <div fxFlex="45" fxFlex.lt-md>
+                        <p class="description mat-subheading-1" style="color: white; display: inline; padding-left: 10px">
+                            En que te podemos ayudar hoy?
+                        </p>
+                    </div>
                 </div>
-              </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel (opened)="panelOpenState = true"
-                                 (closed)="panelOpenState = false">
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                </mat-panel-title>
-                <mat-panel-description style="  font-weight: bold;">
-                  ¿En dónde entregamos?
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <div fxLayout="column" fxLayoutAlign="left" >
-                <div fxLayout="row wrap" fxLayoutAlign="left center" style="width: 100% !important;">
-                  <div fxFlex="60" fxFlex.lt-md>
-                    <mat-form-field appearance="outline" style="width: 100%">
-                      <input matInput
-                             ngx-google-places-autocomplete [options]='options'  #placesRef="ngx-places"
-                             (onAddressChange)="doAddressChange($event)">
-                    </mat-form-field>
-                  </div>
-                  <div style="padding-left: 10px;" fxFlex="40" fxFlex.lt-md>
-                    <mat-form-field appearance="outline">
-                      <mat-label>Especificaciones</mat-label>
-                      <input matInput type="text" placeholder="Ofinica 123" [ngModel]="especificaciones2" required>
-                    </mat-form-field>
-                  </div>
-                  <div  fxFlex="102" fxFlex.lt-md>
-                    <mat-form-field appearance="outline" style="width: 100%">
-                      <mat-label>Instrucciones</mat-label>
-                      <input  matInput type="text" placeholder="Recoger factura de luz y pagarla" required>
-                    </mat-form-field>
-                  </div>
-                  <div  fxFlex="30" fxFlex.lt-md>
-                    <mat-slide-toggle>Ida y vuelta</mat-slide-toggle>
-                  </div>
+                <div>
+                    <br>
+                    <div fxLayout="row wrap" fxLayoutAlign="left center" style="width: 100% !important;">
+                        <div fxFlex="50" fxFlex.lt-md>
+                            <p>Selecciona la ciudad del servicio a solicitar: </p>
+                        </div>
+                        <div fxFlex="10" fxFlex.lt-md>
+                        </div>
+                        <div fxFlex="40" fxFlex.lt-md>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Seleccionar ciudad</mat-label>
+                                <mat-select>
+                                    <mat-option>
+                                        Barranquilla
+                                    </mat-option>
+                                    <mat-option>
+                                        Bogota
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <mat-accordion>
+                        <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                </mat-panel-title>
+                                <mat-panel-description style="  font-weight: bold;">
+                                    ¿En dónde recogemos?
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <div fxLayout="column" fxLayoutAlign="left">
+                                <div fxLayout="row wrap" fxLayoutAlign="left center" style="width: 100% !important;">
+                                    <div fxFlex="60" fxFlex.lt-md>
+                                        <mat-form-field appearance="outline" style="width: 100%">
+                                            <mat-icon matSuffix>my_location</mat-icon>
+                                            <input matInput ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="doAddressChangeOrigin($event)">
+                                        </mat-form-field>
+                                    </div>
+                                    <div style="padding-left: 10px;" fxFlex="40" fxFlex.lt-md>
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Especificaciones</mat-label>
+                                            <input matInput type="text" placeholder="Ofinica 123" [ngModel]="especificaciones" required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div fxFlex="102" fxFlex.lt-md>
+                                        <mat-form-field appearance="outline" style="width: 100%">
+                                            <mat-label>Instrucciones</mat-label>
+                                            <input matInput type="text" placeholder="Recoger factura de luz y pagarla" required>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                </mat-panel-title>
+                                <mat-panel-description style="  font-weight: bold;">
+                                    ¿En dónde entregamos?
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <div fxLayout="column" fxLayoutAlign="left">
+                                <div fxLayout="row wrap" fxLayoutAlign="left center" style="width: 100% !important;">
+                                    <div fxFlex="60" fxFlex.lt-md>
+                                        <mat-form-field appearance="outline" style="width: 100%">
+                                            <input matInput ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="doAddressChange($event)">
+                                        </mat-form-field>
+                                    </div>
+                                    <div style="padding-left: 10px;" fxFlex="40" fxFlex.lt-md>
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Especificaciones</mat-label>
+                                            <input matInput type="text" placeholder="Ofinica 123" [ngModel]="especificaciones2" required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div fxFlex="102" fxFlex.lt-md>
+                                        <mat-form-field appearance="outline" style="width: 100%">
+                                            <mat-label>Instrucciones</mat-label>
+                                            <input matInput type="text" placeholder="Recoger factura de luz y pagarla" required>
+                                        </mat-form-field>
+                                    </div>
+                                    <div fxFlex="30" fxFlex.lt-md>
+                                        <mat-slide-toggle>Ida y vuelta</mat-slide-toggle>
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                    <br>
+                    <div fxLayout="column wrap" fxLayoutAlign="center center" style="width: 20% !important;">
+                        <mat-divider></mat-divider>
+                    </div>
+                    <br>
+                    <div fxLayout="row wrap" fxLayoutAlign="left">
+                        <div fxFlex="33" fxFlex.lt-md>
+                            <mat-form-field appearance="outline" style="width: 90%; padding-left: 10px">
+                                <mat-label>Servicio inmediato</mat-label>
+                                <mat-select matNativeControl required>
+                                    <mat-option *ngFor="let elt of tipoServicio" [value]="elt" [value]="elt">
+                                        {{elt.name}}
+                                        <mat-divider></mat-divider>
+
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="33" fxFlex.lt-md>
+                            <mat-form-field appearance="outline" style="width: 90%; padding-left: 10px">
+                                <mat-label>Tamaño</mat-label>
+                                <mat-select matNativeControl required>
+                                    <mat-option *ngFor="let elt of tamanoPaquete" [value]="elt">
+                                        {{elt.descriptions}}
+                                        <mat-divider></mat-divider>
+
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="33" fxFlex.lt-md>
+                            <mat-form-field appearance="outline" style="width: 90%; padding-left: 10px">
+                                <mat-label>Valor declarado</mat-label>
+                                <input matInput type="number" class="example-right-align">
+                                <span matPrefix>$&nbsp;</span>
+                            </mat-form-field>
+                        </div>
+                        <div class="padd contenedor" fxFlex="50" fxFlex.lt-md>
+                            <img src="../../../assets/home/carga.png" style="width: 100%">
+                        </div>
+                        <div class="padd contenedor" fxFlex="50" fxFlex.lt-md>
+                            <!-- <img src="../../../assets/home/confirmar.png" (click)="solicitar()" style="padding-left: 10px;width: 100%"> -->
+                            <img src="../../../assets/home/confirmar.png" (click)="confirmarServicio()" style="padding-left: 10px;width: 100%">
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </mat-expansion-panel>
-          </mat-accordion>
-          <br>
-          <div fxLayout="column wrap" fxLayoutAlign="center center" style="width: 20% !important;">
-            <mat-divider></mat-divider>
-          </div>
-          <br>
-          <div fxLayout="row wrap" fxLayoutAlign="left" >
-            <div fxFlex="33" fxFlex.lt-md>
-              <mat-form-field appearance="outline" style="width: 90%; padding-left: 10px">
-                <mat-label>Servicio inmediato</mat-label>
-                <mat-select  matNativeControl required>
-                  <mat-option *ngFor="let elt of tipoServicio" [value]="elt"[value]="elt">
-                    {{elt.name}}
-                    <mat-divider></mat-divider>
-
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
             </div>
-            <div fxFlex="33" fxFlex.lt-md>
-              <mat-form-field appearance="outline" style="width: 90%; padding-left: 10px">
-                <mat-label>Tamaño</mat-label>
-                <mat-select  matNativeControl required>
-                  <mat-option *ngFor="let elt of tamanoPaquete" [value]="elt">
-                    {{elt.descriptions}}
-                    <mat-divider></mat-divider>
-
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div fxFlex="33" fxFlex.lt-md>
-              <mat-form-field appearance="outline" style="width: 90%; padding-left: 10px">
-                <mat-label>Valor declarado</mat-label>
-                <input matInput type="number" class="example-right-align">
-                <span matPrefix>$&nbsp;</span>
-              </mat-form-field>
-            </div>
-            <div class="padd contenedor" fxFlex="50" fxFlex.lt-md >
-              <img src="../../../assets/home/carga.png" style="width: 100%" >
-            </div>
-            <div class="padd contenedor" fxFlex="50" fxFlex.lt-md >
-              <img src="../../../assets/home/confirmar.png" (click)="solicitar()" style="padding-left: 10px;width: 100%">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="background" *ngIf="resumen==true">
-        <div  fxLayout="row" fxLayoutAlign="left ">
-          <img src="assets/home/aliado.png" style="padding-left: 18%">
-        </div>
-        <div  fxLayout="row">
-          <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
-
-          <img src="assets/home/cargando.png" >
-        </div>
-        <div  fxLayout="row" fxLayoutAlign="left ">
-          <img src="assets/home/asignando.png">
-        </div>
-        <div style="background-color: #F7F7F7; width: 103%">
-          <br>
-          <div fxLayout="row wrap" fxLayoutAlign="left center" >
-            <div fxFlex="100" fxFlex.lt-md style="    padding: 9px;">
-
-            <mat-card>
-              <div fxLayout="row wrap" fxLayoutAlign="left center" >
-                <div fxFlex="30" fxFlex.lt-md>
-                  <h3 style="  font-weight: bold;"> id del pedido</h3>
+            <div class="background" *ngIf="resumen==true">
+                <div fxLayout="row" fxLayoutAlign="left ">
+                    <img src="assets/home/aliado.png" style="padding-left: 18%">
                 </div>
-                <div fxFlex="55" fxFlex.lt-md>
+                <div fxLayout="row">
+                    <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+
+                    <img src="assets/home/cargando.png">
                 </div>
-                <div fxFlex="15" fxFlex.lt-md>
-                  <h3 style="  font-weight: bold;"> 12456</h3>
+                <div fxLayout="row" fxLayoutAlign="left ">
+                    <img src="assets/home/asignando.png">
                 </div>
-                <div fxFlex="30" fxFlex.lt-md>
-                  <h3>06-07-2020</h3>
+                <div style="background-color: #F7F7F7; width: 103%">
+                    <br>
+                    <div fxLayout="row wrap" fxLayoutAlign="left center">
+                        <div fxFlex="100" fxFlex.lt-md style="    padding: 9px;">
+
+                            <mat-card>
+                                <div fxLayout="row wrap" fxLayoutAlign="left center">
+                                    <div fxFlex="30" fxFlex.lt-md>
+                                        <h3 style="  font-weight: bold;"> id del pedido</h3>
+                                    </div>
+                                    <div fxFlex="55" fxFlex.lt-md>
+                                    </div>
+                                    <div fxFlex="15" fxFlex.lt-md>
+                                        <h3 style="  font-weight: bold;"> 12456</h3>
+                                    </div>
+                                    <div fxFlex="30" fxFlex.lt-md>
+                                        <h3>06-07-2020</h3>
+                                    </div>
+                                </div>
+                            </mat-card>
+                        </div>
+                        <div fxFlex="100" fxFlex.lt-md style="    padding: 9px;">
+
+                            <mat-card>
+                                <div fxLayout="row wrap" fxLayoutAlign="left center">
+                                    <div fxFlex="30" fxFlex.lt-md>
+                                        <h3 style="  font-weight: bold;">Direcciones</h3>
+                                    </div>
+                                    <div fxFlex="70" fxFlex.lt-md>
+                                    </div>
+                                    <div fxFlex="3" fxFlex.lt-md>
+                                        <img src="assets/home/origen.png">
+                                    </div>
+                                    <div fxFlex="97" fxFlex.lt-md style="padding-top: 1px">
+                                        <h3>{{hijo.dirOrigen}}</h3>
+                                    </div>
+                                    <div fxFlex="3" fxFlex.lt-md>
+                                        <img src="assets/home/origen.png">
+                                    </div>
+                                    <div fxFlex="97" fxFlex.lt-md>
+                                        <h3>{{hijo.dirDestino}}</h3>
+                                    </div>
+                                </div>
+                            </mat-card>
+                        </div>
+                        <div fxFlex="100" fxFlex.lt-md style="    padding: 9px;">
+
+                            <mat-card>
+                                <div fxLayout="row wrap" fxLayoutAlign="left center">
+                                    <div fxFlex="100" fxFlex.lt-md>
+                                        <h3 style="  font-weight: bold;">Valor del servicio</h3>
+                                    </div>
+                                    <div fxFlex="5" fxFlex.lt-md>
+                                        <h3>Distancia</h3>
+                                    </div>
+                                    <div fxFlex="87" fxFlex.lt-md>
+                                    </div>
+                                    <div fxFlex="8" fxFlex.lt-md>
+                                        <h3>{{hijo.distancia}} km</h3>
+                                    </div>
+
+                                    <div fxFlex="50" fxFlex.lt-md>
+                                        <h3>Tarifa base</h3>
+                                    </div>
+                                    <div fxFlex="40" fxFlex.lt-md>
+                                    </div>
+                                    <div fxFlex="10" fxFlex.lt-md>
+                                        <h3>{{hijo.valor}}</h3>
+                                    </div>
+
+
+                                    <div fxFlex="2" fxFlex.lt-md>
+                                    </div>
+                                    <div fxFlex="96" fxFlex.lt-md>
+                                        <img src="assets/home/linea.png" style="width: 100%">
+                                    </div>
+                                    <div fxFlex="2" fxFlex.lt-md>
+                                    </div>
+
+
+
+
+                                    <div fxFlex="50" fxFlex.lt-md>
+                                        <h3 style="font-weight: bold;">Valor total</h3>
+                                    </div>
+                                    <div fxFlex="40" fxFlex.lt-md>
+                                    </div>
+                                    <div fxFlex="10" fxFlex.lt-md>
+                                        <h3 style="font-weight: bold;">{{hijo.valor}}</h3>
+                                    </div>
+
+
+                                </div>
+                            </mat-card>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <br>
+                    <img src="assets/home/cancelar.png" (click)="cancelar()">
                 </div>
-                </div>
-            </mat-card>
             </div>
-            <div fxFlex="100" fxFlex.lt-md style="    padding: 9px;">
 
-              <mat-card>
-                <div fxLayout="row wrap" fxLayoutAlign="left center" >
-                  <div fxFlex="30" fxFlex.lt-md>
-                    <h3 style="  font-weight: bold;">Direcciones</h3>
-                  </div>
-                  <div fxFlex="70" fxFlex.lt-md>
-                  </div>
-                  <div fxFlex="3" fxFlex.lt-md>
-                    <img src="assets/home/origen.png">
-                  </div>
-                  <div fxFlex="97" fxFlex.lt-md style="padding-top: 1px">
-                    <h3>{{hijo.dirOrigen}}</h3>
-                  </div>
-                  <div fxFlex="3" fxFlex.lt-md>
-                    <img src="assets/home/origen.png">
-                  </div>
-                  <div fxFlex="97" fxFlex.lt-md>
-                    <h3>{{hijo.dirDestino}}</h3>
-                  </div>
-                </div>
-              </mat-card>
-            </div>
-            <div fxFlex="100" fxFlex.lt-md style="    padding: 9px;">
-
-              <mat-card>
-                <div fxLayout="row wrap" fxLayoutAlign="left center" >
-                  <div fxFlex="100" fxFlex.lt-md>
-                    <h3 style="  font-weight: bold;">Valor del servicio</h3>
-                  </div>
-                  <div fxFlex="5" fxFlex.lt-md>
-                    <h3>Distancia</h3>
-                  </div>
-                  <div fxFlex="87" fxFlex.lt-md>
-                  </div>
-                  <div fxFlex="8" fxFlex.lt-md>
-                    <h3>{{hijo.distancia}} km</h3>
-                  </div>
-
-                  <div fxFlex="50" fxFlex.lt-md>
-                    <h3>Tarifa base</h3>
-                  </div>
-                  <div fxFlex="40" fxFlex.lt-md>
-                  </div>
-                  <div fxFlex="10" fxFlex.lt-md>
-                    <h3>{{hijo.valor}}</h3>
-                  </div>
-
-
-                  <div fxFlex="2" fxFlex.lt-md>
-                  </div>
-                  <div fxFlex="96" fxFlex.lt-md>
-                    <img src="assets/home/linea.png" style="width: 100%">
-                  </div>
-                  <div fxFlex="2" fxFlex.lt-md>
-                  </div>
-
-
-
-
-                  <div fxFlex="50" fxFlex.lt-md>
-                    <h3 style="font-weight: bold;">Valor total</h3>
-                  </div>
-                  <div fxFlex="40" fxFlex.lt-md>
-                  </div>
-                  <div fxFlex="10" fxFlex.lt-md>
-                    <h3 style="font-weight: bold;">{{hijo.valor}}</h3>
-                  </div>
-
-
-                </div>
-              </mat-card>
-            </div>
-          </div>
-
-          <br>
-
-          <br>
-         <img src="assets/home/cancelar.png" (click)="cancelar()">
-        </div>
-      </div>
-
-    </mat-card>
-    <mat-card fxFlex="60">
-      <app-map></app-map>
-    </mat-card>
-  </div>
+        </mat-card>
+        <mat-card fxFlex="60">
+            <app-map></app-map>
+        </mat-card>
+    </div>
 </div>
