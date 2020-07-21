@@ -31,6 +31,7 @@ import { GoogleMapsAPIWrapper } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
 import { ProfileComponent } from './components/home/profile/profile.component';
 import { HeaderComponent } from './components/home/header/header.component';
+import { ConfimarServicioComponent } from './components/home/confimar-servicio/confimar-servicio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +48,7 @@ import { HeaderComponent } from './components/home/header/header.component';
     RegistroComponent,
     ProfileComponent,
     HeaderComponent,
+    ConfimarServicioComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,9 @@ import { HeaderComponent } from './components/home/header/header.component';
     MatGoogleMapsAutocompleteModule,
     AgmCoreModule.forRoot()
   ],
-  providers: [GlobalsService,AuthGuard,GoogleMapsAPIWrapper],
+  providers: [GlobalsService,
+    AuthGuard,
+    GoogleMapsAPIWrapper],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

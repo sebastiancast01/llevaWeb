@@ -1,0 +1,66 @@
+<p style="font-weight: bold;margin-left: 10px;">Valor del servicio</p>
+
+<mat-card style="background: #eee;">
+    <p>Distancia <span>2 Km</span></p>
+    <p>Tarifa base <span>$ 4.990</span></p>
+    <p>Tarifa base <span>$ 4.990</span></p>
+    <hr>
+    <p style="font-weight: bold;">Valor total <span>$ 4.990</span></p>
+</mat-card>
+<p style="font-weight: bold;margin: 10px;">Aplicar descuento</p>
+<mat-card style="background: #eee;padding: 5px 16px !important; ">
+    <div fxFlex="40" fxFlex.lt-md>
+        <p style="margin-top: 17px;">Tengo un cupon</p>
+    </div>
+    <div fxFlex="60" fxFlex.lt-md>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <input matInput placeholder="000000000" required>
+        </mat-form-field>
+    </div>
+</mat-card>
+<p style="font-weight: bold;margin: 10px;">Metodo de pago</p>
+<div style="justify-content: space-between;margin-bottom: 10px;">
+    <div fxFlex="30" fxFlex.lt-md class="metodopago">
+        <button (click)="verSaldo()">
+            <img src="assets/confirmarpago/saldo.png" alt="">
+        <label> Saldo</label>
+        </button>
+    </div>
+    <div fxFlex="30" fxFlex.lt-md class="metodopago">
+        <button (click)="verEfectivo()">
+        <img src="assets/confirmarpago/efectivo.png" alt="">
+        <label> Efectivo</label>
+    </button>
+    </div>
+    <div fxFlex="30" fxFlex.lt-md class="metodopago">
+        <button (click)="verCredito()">
+        <img src="assets/confirmarpago/credito.png" alt="">
+        <label> PSE/Credito</label>
+    </button>
+    </div>
+</div>
+<mat-card style="background: #eee;">
+    <div class="saldo" id="saldo">
+        <mat-checkbox class="example-margin">Saldo en lleva</mat-checkbox><span style=" font-weight: bold; float: right;">$150.990</span>
+        <!-- <p style="font-size: 20px;">Saldo en lleva <span style=" font-weight: bold;">$150.990</span></p> -->
+    </div>
+
+    <div class="efectivo" id="efectivo" style="text-align: center;">
+        <mat-checkbox class="example-margin" style="font-weight: bold;">¿Necesitas cambio?</mat-checkbox>
+        <p>Por favot déjanos el valor del billete para tenerlo tu cambio listo a la entrega de tu servicio.</p>
+        <mat-form-field appearance="outline" style="width: 100%;">
+            <mat-label>
+                Valor del billete
+            </mat-label>
+            <input matInput placeholder="Valor del billete" required>
+        </mat-form-field>
+    </div>
+
+    <div class="credito" id="credito">
+        <img src="assets/confirmarpago/efectivopago.png" alt="">
+    </div>
+</mat-card>
+
+<div style="padding: 10px; text-align: center;">
+    <img src="assets/confirmarpago/boton.png" alt="">
+</div>

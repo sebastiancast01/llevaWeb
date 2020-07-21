@@ -1,0 +1,23 @@
+mat-card p span {
+    float: right;
+}
+
+hr {
+    border: 1px solid #aaa;
+}
+
+.metodopago {
+    text-align: center;
+    background: #eee;
+    padding: 10px;
+}
+
+.metodopago button {
+    background: transparent;
+    border: 0;
+}
+
+.efectivo,
+.credito {
+    display: none;
+}
