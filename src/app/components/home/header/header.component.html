@@ -1,42 +1,42 @@
 <div fxLayout="row wrap" fxLayoutAlign="left center" style="width: 100% !important;">
-  <div fxFlex="50" fxFlex.lt-md>
-    <img style="    padding-left: 20px;" src="assets/home/lleva.png">
-  </div>
-  <div fxFlex="10" fxFlex.lt-md>
-    <img src="assets/home/support.png" style="display: inline">
-    <p style="display: inline"> &nbsp;Servicio al cliente</p>
-  </div>
-  <div fxFlex="5" fxFlex.lt-md>
-  </div>
-  <div fxFlex="15" fxFlex.lt-md>
-    <img src="assets/home/person.png" style="display: inline">
-    <p style="display: inline"> &nbsp;{{nombre}}</p>
-    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+    <div fxFlex="50" fxFlex.lt-md>
+        <img style="    padding-left: 20px;" src="assets/home/lleva.png">
+    </div>
+    <div fxFlex="15" fxFlex.lt-md style="position: relative;">
+        <img src="assets/home/support.png" style="display: inline">
+        <p class="servicio"> &nbsp;Servicio al cliente</p>
+    </div>
+    <div fxFlex="15" fxFlex.lt-md style="position: relative;display: flex !important">
+        <img src="assets/home/person.png" style="display: inline">
+        <!-- <p style="display: inline"> &nbsp;{{nombre}}</p> -->
+        <p class="nombre"> &nbsp;Pedro Perez</p>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="btn-cuenta">
       <mat-icon>more_vert</mat-icon>
     </button>
-    <mat-menu #menu="matMenu" style="display: inline">
-      <button mat-menu-item style="display: inline">
+        <mat-menu #menu="matMenu" style="display: inline">
+            <button mat-menu-item style="display: inline">
         <span>Mi cuenta</span>
       </button>
-      <mat-divider></mat-divider>
-      <button mat-menu-item >
+            <mat-divider></mat-divider>
+            <button mat-menu-item>
         <span>Historial de servicio</span>
       </button>
-      <mat-divider></mat-divider>
-      <button mat-menu-item>
+            <mat-divider></mat-divider>
+            <button mat-menu-item>
         <span>Billetera virtual</span>
       </button>
-      <mat-divider></mat-divider>
-      <button mat-menu-item>
+            <mat-divider></mat-divider>
+            <button mat-menu-item>
         <span>Email certificado</span>
       </button>
-      <mat-divider></mat-divider>
-      <button mat-menu-item (click)="logout()">
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="logout()">
         <span style="color: #2F8457">Cerrar sesión</span>
       </button>
-    </mat-menu>
-  </div>
-  <div fxFlex="10" fxFlex.lt-md>
-    <img src="assets/home/solicitar.png" style="display: inline">
-  </div>
+        </mat-menu>
+    </div>
+    <div fxFlex="10" fxFlex.lt-md style="position: relative;">
+        <img src="assets/home/solicitar.png">
+        <p class="solicitar">Solicitar servicio</p>
+    </div>
 </div>
