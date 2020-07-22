@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiRegisterService} from '../../../services/apiRegister/api-register.service';
+// import {ApiRegisterService} from '../../../services/apiRegister/api-register.service';
 import {Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import{GlobalsService} from '../../../globals.service';
@@ -11,7 +11,9 @@ import{GlobalsService} from '../../../globals.service';
 })
 export class ConfirmComponent implements OnInit {
 
-  constructor(public apiRegister: ApiRegisterService, public router: Router, private _snackBar: MatSnackBar,
+  constructor(
+    // public apiRegister: ApiRegisterService,
+     public router: Router, private _snackBar: MatSnackBar,
               public globals:GlobalsService) { }
   phone=this.globals.phone;
 
@@ -35,7 +37,7 @@ export class ConfirmComponent implements OnInit {
       'phone': this.phone
     };
 
-    this.apiRegister.sendCodePhone(this, data, this.reenviarCodigo, this.errorReenvio);
+    // this.apiRegister.sendCodePhone(this, data, this.reenviarCodigo, this.errorReenvio);
 
   }
 
@@ -59,7 +61,7 @@ export class ConfirmComponent implements OnInit {
     };
     let phone= this.globals.phone;
 
-    this.apiRegister.valCodePhone(this, data, this.despuesDeEnviarCodigo, this.errorHanndler);
+    // this.apiRegister.valCodePhone(this, data, this.despuesDeEnviarCodigo, this.errorHanndler);
   }
 
 

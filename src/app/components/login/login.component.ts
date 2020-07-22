@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {Router} from '@angular/router';
 import{GlobalsService} from '../../globals.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {ApiRegisterService} from '../../services/apiRegister/api-register.service';
+// import {ApiRegisterService} from '../../services/apiRegister/api-register.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +12,9 @@ import {ApiRegisterService} from '../../services/apiRegister/api-register.servic
 })
 export class LoginComponent implements OnInit{
 
-  constructor(private apiRegister: ApiRegisterService, private router: Router, private _snackBar: MatSnackBar,
+  constructor(
+    // private apiRegister: ApiRegisterService,
+     private router: Router, private _snackBar: MatSnackBar,
               private globals:GlobalsService) { }
 
   public user_name = null;
@@ -36,7 +38,7 @@ export class LoginComponent implements OnInit{
       'username': this.user_name,
       'password': this.password
     };
-    this.apiRegister.login(this, data, this.despuesDeEnviarCodigo, this.errorHanndler);
+    // this.apiRegister.login(this, data, this.despuesDeEnviarCodigo, this.errorHanndler);
 
   }
 

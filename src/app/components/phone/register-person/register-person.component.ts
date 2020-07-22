@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {ApiRegisterService} from '../../../services/apiRegister/api-register.service';
+// import {ApiRegisterService} from '../../../services/apiRegister/api-register.service';
 import {Router} from '@angular/router';
 import{GlobalsService} from '../../../globals.service';
 
@@ -14,7 +14,9 @@ export class RegisterPersonComponent implements OnInit {
 hide=true
 
 
-  constructor(public apiRegister: ApiRegisterService, public router: Router, private _snackBar: MatSnackBar,
+  constructor(
+    // public apiRegister: ApiRegisterService,
+     public router: Router, private _snackBar: MatSnackBar,
     public globals:GlobalsService) { }
 
 
@@ -66,7 +68,7 @@ hide=true
       "average":1,
       "name_contact":""
     };
-    this.apiRegister.register(this, data, this.despuesDeEnviarDatos, this.errorHanndler);
+    // this.apiRegister.register(this, data, this.despuesDeEnviarDatos, this.errorHanndler);
   }
 
   despuesDeEnviarDatos(_this, data) {

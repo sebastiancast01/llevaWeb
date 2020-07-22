@@ -5,7 +5,7 @@ import {Address} from 'ngx-google-places-autocomplete/objects/address';
 import {AgmMap} from '@agm/core';
 import {GlobalsService} from '../../../globals.service';
 import {Router} from '@angular/router';
-import {ApiRegisterService} from '../../../services/apiRegister/api-register.service';
+// import {ApiRegisterService} from '../../../services/apiRegister/api-register.service';
 import Global = WebAssembly.Global;
 
 @Component({
@@ -40,7 +40,9 @@ export class MapComponent implements OnInit {
   ngOnInit() {
     this.setCurrentLocation();
   }
-  constructor(public globals:GlobalsService, public servi:ApiRegisterService) {
+  constructor(public globals:GlobalsService
+    // public servi:ApiRegisterService
+    ) {
 
   }
   getDirection(lat, lng) {
@@ -116,7 +118,7 @@ export class MapComponent implements OnInit {
     this.dirDestino=$event.routes[0].legs[0].end_address;
     console.log(Math.round($event.routes[0].legs[0].distance.value/1000));
     this.distancia=Math.round($event.routes[0].legs[0].distance.value/1000);
-    this.servi.valor(this, this.data ,this.despuesDeEnviarCodigo,this.errorHanndler);
+    // this.servi.valor(this, this.data ,this.despuesDeEnviarCodigo,this.errorHanndler);
   }
 
   despuesDeEnviarCodigo(_this, data) {

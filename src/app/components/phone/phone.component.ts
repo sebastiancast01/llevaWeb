@@ -1,7 +1,7 @@
 
 import {Component, ViewChild} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import {ApiRegisterService} from '../../services/apiRegister/api-register.service';
+// import {ApiRegisterService} from '../../services/apiRegister/api-register.service';
 import {ConfirmComponent} from './confirm/confirm.component';
 import {Router} from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
@@ -16,7 +16,9 @@ export class PhoneComponent {
   @ViewChild("confirm")
   public confirm: ConfirmComponent;
 
-  constructor(public apiRegister: ApiRegisterService, public router: Router, private _snackBar: MatSnackBar,
+  constructor(
+    // public apiRegister: ApiRegisterService,
+     public router: Router, private _snackBar: MatSnackBar,
               public globals:GlobalsService) {
   }
 
@@ -38,7 +40,7 @@ export class PhoneComponent {
       'phone': this.phone
     };
 
-    this.apiRegister.sendCodePhone(this, data, this.despuesDeEnviarCodigo, this.errorHanndler);
+    // this.apiRegister.sendCodePhone(this, data, this.despuesDeEnviarCodigo, this.errorHanndler);
 
   }
 

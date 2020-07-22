@@ -7,3 +7,33 @@ mat-divider {
 mat-form-field {
     width: 100%;
 }
+
+.active {
+    color: rgb(47, 132, 87);
+}
+
+button.btn:active {
+    color: rgb(47, 132, 87);
+}
+
+button {
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+}
+
+.form-direccion,
+.form-kms,
+.form-recomienda {
+    display: none !important;
+}
+
+.location {
+    margin: 15px;
+}
+
+.delete {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+}

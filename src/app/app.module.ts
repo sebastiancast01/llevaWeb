@@ -20,7 +20,7 @@ import { ChangePasswordComponent } from './components/password/change-password/c
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {GlobalsService} from './globals.service';
 import { RegisterEmpresaComponent } from './components/phone/register-empresa/register-empresa.component';
-import {AuthGuard} from './services/guards/auth.guard';
+// import {AuthGuard} from './services/guards/auth.guard';
 import { RegisterAliadoComponent } from './components/register-aliado/register-aliado.component';
 import { RegistroComponent } from './components/register-aliado/registro/registro.component';
 import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
@@ -32,6 +32,13 @@ import { AgmDirectionModule } from 'agm-direction';
 import { ProfileComponent } from './components/home/profile/profile.component';
 import { HeaderComponent } from './components/home/header/header.component';
 import { ConfimarServicioComponent } from './components/home/confimar-servicio/confimar-servicio.component';
+import { CambiarclaveComponent } from './components/home/profile/cambiarclave/cambiarclave.component';
+import { ActualizardatosComponent } from './components/home/profile/actualizardatos/actualizardatos.component';
+import { ConvertirempresaComponent } from './components/home/profile/convertirempresa/convertirempresa.component';
+import { SolicitudenviadaComponent } from './components/home/profile/convertirempresa/solicitudenviada/solicitudenviada.component';
+import { LibretadireccionesComponent } from './components/home/profile/libretadirecciones/libretadirecciones.component';
+import { EliminarComponent } from './components/home/profile/libretadirecciones/eliminar/eliminar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +56,12 @@ import { ConfimarServicioComponent } from './components/home/confimar-servicio/c
     ProfileComponent,
     HeaderComponent,
     ConfimarServicioComponent,
+    CambiarclaveComponent,
+    ActualizardatosComponent,
+    ConvertirempresaComponent,
+    SolicitudenviadaComponent,
+    LibretadireccionesComponent,
+    EliminarComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +84,7 @@ import { ConfimarServicioComponent } from './components/home/confimar-servicio/c
     AgmCoreModule.forRoot()
   ],
   providers: [GlobalsService,
-    AuthGuard,
+    // AuthGuard,
     GoogleMapsAPIWrapper],
   bootstrap: [AppComponent]
 })

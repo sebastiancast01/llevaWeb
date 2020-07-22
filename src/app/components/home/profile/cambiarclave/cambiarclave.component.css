@@ -1,0 +1,16 @@
+.title-cambiar {
+    margin: auto;
+    font-size: 25px;
+    color: rgb(47, 132, 87);
+    margin-bottom: 18px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}

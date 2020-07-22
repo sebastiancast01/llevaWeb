@@ -5,7 +5,7 @@ import {  ViewChild,Directive } from '@angular/core';
 import { Address } from 'ngx-google-places-autocomplete/objects/address';
 import {MapComponent} from '../map/map.component';
 import {MatDialog} from '@angular/material/dialog';
-import {ApiRegisterService} from '../../../services/apiRegister/api-register.service';
+// import {ApiRegisterService} from '../../../services/apiRegister/api-register.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +14,9 @@ import {ApiRegisterService} from '../../../services/apiRegister/api-register.ser
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public globals:GlobalsService, private router: Router, public servi:ApiRegisterService) { }
+  constructor(public globals:GlobalsService, private router: Router, 
+    // public servi:ApiRegisterService
+    ) { }
   nombre=this.globals.name;
 
   ngOnInit(): void {
