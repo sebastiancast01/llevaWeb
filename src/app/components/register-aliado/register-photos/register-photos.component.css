@@ -1,0 +1,36 @@
+.titles {
+    line-height: 1px;
+    text-align: center;
+    color: rgb(47, 132, 87);
+}
+
+mat-list {
+    border: 1px solid #eee;
+    padding: 13px;
+    border-radius: 10px;
+}
+
+mat-list-item h3 {
+    font-size: 13px;
+    color: #4D4D4D;
+}
+
+.pendiente {
+    position: absolute;
+    top: 22px;
+    font-size: 12px;
+    color: rgb(47, 132, 87);
+    margin-top: 2px;
+}
+
+mat-list-item img {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    width: 15px;
+    height: 15px;
+}
+
+mat-divider {
+    margin-top: 10px !important;
+}

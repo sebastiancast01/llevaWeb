@@ -12,6 +12,8 @@ import { RegisterEmpresaComponent } from './components/phone/register-empresa/re
 // import {AuthGuard} from './services/guards/auth.guard';
 import { RegisterAliadoComponent } from './components/register-aliado/register-aliado.component';
 import { RegistroComponent } from './components/register-aliado/registro/registro.component';
+import { RegisterPhotosComponent } from './components/register-aliado/register-photos/register-photos.component';
+import { CargardocumentosComponent } from './components/register-aliado/register-photos/cargardocumentos/cargardocumentos.component';
 import { ProfileComponent } from './components/home/profile/profile.component';
 
 const routes: Routes = [
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'aliado', component: RegisterAliadoComponent },
   { path: 'registro', component: RegistroComponent },
+  { path: 'registro-photos', component: RegisterPhotosComponent },
+  { path: 'cargar-documento', component: CargardocumentosComponent },
 ];
 @NgModule({
 

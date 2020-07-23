@@ -139,4 +139,20 @@ export class HomeComponent implements OnInit {
         }
       });
   }
+
+  cargaMasiva(){
+    const dialogRef = this.dialog.open(ConfimarServicioComponent, {
+      width: '400px',
+      data: { mode: 'create' }
+    });
+
+    dialogRef.afterClosed()
+      .subscribe((confirmado: Boolean) => {
+        if (!confirmado) {
+          console.log('Cerrado');
+        } else {
+          console.log('Guardado');
+        }
+      });
+  }
 }

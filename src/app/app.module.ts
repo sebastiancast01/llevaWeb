@@ -38,6 +38,8 @@ import { ConvertirempresaComponent } from './components/home/profile/convertirem
 import { SolicitudenviadaComponent } from './components/home/profile/convertirempresa/solicitudenviada/solicitudenviada.component';
 import { LibretadireccionesComponent } from './components/home/profile/libretadirecciones/libretadirecciones.component';
 import { EliminarComponent } from './components/home/profile/libretadirecciones/eliminar/eliminar.component';
+import { RegisterPhotosComponent } from './components/register-aliado/register-photos/register-photos.component';
+import { CargardocumentosComponent } from './components/register-aliado/register-photos/cargardocumentos/cargardocumentos.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,8 @@ import { EliminarComponent } from './components/home/profile/libretadirecciones/
     SolicitudenviadaComponent,
     LibretadireccionesComponent,
     EliminarComponent,
+    RegisterPhotosComponent,
+    CargardocumentosComponent,
   ],
   imports: [
     BrowserModule,
