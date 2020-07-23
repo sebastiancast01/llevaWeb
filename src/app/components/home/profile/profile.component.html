@@ -176,11 +176,76 @@
             </div>
 
             <div class="form-kms" id="form-kms">
-                KMS
+                <div fxFlex="100" fxFlex.lt-md style="margin: 35px 20px;">
+                    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
+                        <div fxLayout="column" fxLayoutGap="20px" style="width: 70%; margin: auto;">
+
+                            <div fxLayout="row wrap" style="width: 100% !important;">
+                                <img style="margin: auto;" src="../../../../assets/perfil/kmslleva.png" alt="">
+                            </div>
+
+                            <div fxLayout="row" style="width: 100% !important;background: #eee;flex-flow: initial !important;">
+                                <div fxFlex="65" fxFlex.lt-md style="margin: 25px;">
+                                    <label>Kms Acumulados <span style="float: right;
+                                        font-size: 23px;
+                                        margin-right: 22px;
+                                        font-weight: 200;">2.238</span></label>
+                                </div>
+                                <hr style="color: #aaa;">
+                                <div fxFlex="35" fxFlex.lt-md style="margin: 25px; text-align: center;">
+                                    <label style="color: rgb(47, 132, 87);">Redimir Kms en beneficios</label>
+                                </div>
+                            </div>
+
+                            <div fxLayout="row wrap" style="width: 100% !important;">
+                                <label class="title-beneficios">Beneficios</label>
+                                <mat-tab-group mat-align-tabs="center" style="width: 100%;">
+                                    <mat-tab label="Activos">
+                                        <p>Mayo 10, 11:34 a.m<span style="float: right; color: rgb(47, 132, 87);">Vigente</span></p>
+                                        <hr>
+                                        <p>Haz recibido una bonificación por código de referido. Válido hasta 24/05/2020.</p>
+
+                                        <p style="font-weight: bold;">-5% dto</p>
+                                    </mat-tab>
+                                    <mat-tab label="Vencidos">Vencidos</mat-tab>
+                                </mat-tab-group>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="form-recomienda" id="form-recomienda">
-                Recomienda
+                <div fxFlex="100" fxFlex.lt-md style="margin: 35px 20px;">
+                    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
+                        <div fxLayout="column" fxLayoutGap="20px" style="width: 70%; margin: auto;">
+
+                            <div fxLayout="row wrap" style="width: 100% !important;">
+                                <img style="margin: auto;" src="../../../../assets/perfil/recomienda.png" alt="">
+                            </div>
+
+                            <div fxLayout="row" style="width: 100% !important;">
+                                <div fxFlex="100" fxFlex.lt-md style="margin: 25px;">
+
+                                    <h4>Recomiéndanos y gana <b>Beneficios</b></h4>
+                                    <p>Invita a tus amigos a utilizar nuestra app y por cada uno que ingrese con tu código recibirás beneficios en tus servicios.</p>
+                                </div>
+                            </div>
+
+                            <div fxLayout="row wrap" style="width: 100% !important; margin-top: -22px !important">
+                                <div class="copy-codigo" (click)="codigo()">
+                                    <label id="copy">COSHW</label>
+                                    <div class="fondo">
+                                        <img style="padding: 8px;" src="../../../../assets/perfil/copy.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <p class="msj-copy" id="msj-copy">Se ha copiado en tu portapapeles</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </mat-card>
     </div>
