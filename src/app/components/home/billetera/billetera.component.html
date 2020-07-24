@@ -1,0 +1,448 @@
+<mat-card>
+    <app-header></app-header>
+</mat-card>
+
+<div class="gris">
+    <div fxLayout="row" fxLayout.lt-md="column" style="padding: 24px;">
+        <mat-card fxFlex="25" style="height: 80vh;">
+            <mat-list>
+                <mat-list-item>
+                    <button mat-button class="option active" id="billetera" (click)="option('billetera')">Billetera Lleva</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button class="option" id="historial" (click)="option('historial')">Historial de servicios</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button class="option" id="servicio" (click)="option('servicio')">Servicio al cliente</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button class="option" id="email" (click)="option('email')">Email certificado</button>
+                </mat-list-item>
+                <!-- <mat-divider></mat-divider> -->
+            </mat-list>
+        </mat-card>
+
+        <mat-card fxFlex="75" style="margin-left: 15px;">
+            <div class="form-billetera" id="form-billetera">
+                <div fxFlex="100" fxFlex.lt-md>
+                    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
+                        <div fxLayout="column" fxLayoutGap="20px" style="width: 100% !important;">
+                            <div fxLayout="row wrap" style="width: 100% !important;">
+                                <div style="padding: 10px;" fxFlex="35" fxFlex.lt-md>
+                                    <img src="../../../../assets/billetera/lleva.png" alt="" class="img-lleva">
+                                    <img src="../../../../assets/billetera/billetera.png" alt="" class="img-billetera">
+                                </div>
+
+                                <div style="padding: 10px;" fxFlex="65" fxFlex.lt-md>
+                                    <div class="saldo">
+                                        <label>Tu saldo es<span>$150,990</span></label>
+                                        <img src="../../../../assets/billetera/btn-recarga.png" alt="">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div style="padding: 10px;" fxFlex="100" fxFlex.lt-md>
+                                    <div class="transacciones">
+                                        <label>Historial de transacciones</label>
+                                        <button>
+                                            <img src="../../../../assets/billetera/descargar.png" alt="">
+                                            <span>Descargar en CVS</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div style="padding: 10px;" fxFlex="100" fxFlex.lt-md>
+                                    <div class="mat-elevation-z8">
+                                        <table mat-table [dataSource]="dataSource" matSort>
+
+                                            <!-- Checkbox Column -->
+                                            <ng-container matColumnDef="select">
+                                                <th mat-header-cell *matHeaderCellDef>
+                                                    <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+                                                    </mat-checkbox>
+                                                </th>
+                                                <td mat-cell *matCellDef="let row">
+                                                    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
+                                                    </mat-checkbox>
+                                                </td>
+                                            </ng-container>
+
+                                            <!-- fecha Column -->
+                                            <ng-container matColumnDef="fecha">
+                                                <th mat-header-cell *matHeaderCellDef> Fecha </th>
+                                                <td mat-cell *matCellDef="let element"> <a href="">{{element.fecha}}</a> </td>
+                                            </ng-container>
+
+                                            <!-- tipo Column -->
+                                            <ng-container matColumnDef="tipo">
+                                                <th mat-header-cell *matHeaderCellDef> Tipo </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+                                            </ng-container>
+
+                                            <!-- referencia Column -->
+                                            <ng-container matColumnDef="referencia">
+                                                <th mat-header-cell *matHeaderCellDef> Referencia</th>
+                                                <td mat-cell *matCellDef="let element"> {{element.referencia}} </td>
+                                            </ng-container>
+
+                                            <!-- valor Column -->
+                                            <ng-container matColumnDef="valor">
+                                                <th mat-header-cell *matHeaderCellDef> Valor </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.valor}} </td>
+                                            </ng-container>
+
+                                            <!-- kms Column -->
+                                            <ng-container matColumnDef="kms">
+                                                <th mat-header-cell *matHeaderCellDef> Kms Lleva </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.kms}} </td>
+                                            </ng-container>
+
+                                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+                                            </tr>
+                                        </table>
+                                        <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons>
+                                        </mat-paginator>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-historial" id="form-historial">
+                <div fxFlex="100" fxFlex.lt-md>
+                    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
+                        <div fxLayout="column" fxLayoutGap="20px" style="width: 100% !important;">
+                            <div fxLayout="row wrap" style="width: 100% !important;">
+                                <div style="padding:0 10px;" fxFlex="100" fxFlex.lt-md>
+                                    <h3>Historial de servicios</h3>
+                                </div>
+
+                                <div style="padding:0 10px;" fxFlex="10" fxFlex.lt-md>
+                                    <label style="line-height: 50px;">Filtrar</label>
+                                </div>
+
+                                <div style="padding: 0 10px;" fxFlex="30" fxFlex.lt-md>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Filtrar por tipo de servicio</mat-label>
+                                        <mat-select>
+                                            <mat-option>
+                                                Diligencia
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+
+                                <div style="padding: 0 10px;" fxFlex="30" fxFlex.lt-md>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput [matDatepicker]="picker" placeholder="Rango de fecha">
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+
+                                <div style="padding: 0 10px;" fxFlex="30" fxFlex.lt-md>
+                                    <mat-form-field appearance="outline">
+                                        <input matInput placeholder="N° de Orden">
+                                    </mat-form-field>
+                                </div>
+
+                                <hr>
+                                <div style="padding: 10px;" fxFlex="100" fxFlex.lt-md>
+                                    <div class="transacciones">
+                                        <label>Resultados de la búsqueda</label>
+                                        <button>
+                                            <img src="../../../../assets/billetera/descargar.png" alt="">
+                                            <span>Descargar en CVS</span>
+                                        </button>
+                                        <button>
+                                            <img src="../../../../assets/billetera/eliminar.png" alt="">
+                                            <span>Eliminar</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div style="padding: 10px;" fxFlex="100" fxFlex.lt-md>
+                                    <div class="mat-elevation-z8">
+                                        <table mat-table [dataSource]="dataSource" matSort>
+
+                                            <!-- Checkbox Column -->
+                                            <ng-container matColumnDef="select">
+                                                <th mat-header-cell *matHeaderCellDef>
+                                                    <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+                                                    </mat-checkbox>
+                                                </th>
+                                                <td mat-cell *matCellDef="let row">
+                                                    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row)">
+                                                    </mat-checkbox>
+                                                </td>
+                                            </ng-container>
+
+                                            <!-- fecha Column -->
+                                            <ng-container matColumnDef="fecha">
+                                                <th mat-header-cell *matHeaderCellDef> Fecha </th>
+                                                <td mat-cell *matCellDef="let element"> <a href="">{{element.fecha}}</a> </td>
+                                            </ng-container>
+
+                                            <!-- tipo Column -->
+                                            <ng-container matColumnDef="tipo">
+                                                <th mat-header-cell *matHeaderCellDef> Tipo </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+                                            </ng-container>
+
+                                            <!-- referencia Column -->
+                                            <ng-container matColumnDef="referencia">
+                                                <th mat-header-cell *matHeaderCellDef> Referencia</th>
+                                                <td mat-cell *matCellDef="let element"> {{element.referencia}} </td>
+                                            </ng-container>
+
+                                            <!-- valor Column -->
+                                            <ng-container matColumnDef="valor">
+                                                <th mat-header-cell *matHeaderCellDef> Valor </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.valor}} </td>
+                                            </ng-container>
+
+                                            <!-- kms Column -->
+                                            <ng-container matColumnDef="kms">
+                                                <th mat-header-cell *matHeaderCellDef> Kms Lleva </th>
+                                                <td mat-cell *matCellDef="let element"> {{element.kms}} </td>
+                                            </ng-container>
+
+                                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+                                            </tr>
+                                        </table>
+                                        <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons>
+                                        </mat-paginator>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-servicio" id="form-servicio">
+                <div fxFlex="100" fxFlex.lt-md>
+                    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
+                        <div fxLayout="column" fxLayoutGap="20px" style="width: 100% !important;">
+                            <div fxLayout="row wrap" style="width: 100% !important;">
+                                <div style="padding:0 10px;" fxFlex="100" fxFlex.lt-md>
+                                    <div style="padding: 0 10px;" fxFlex="35" fxFlex.lt-md>
+                                        <h2>Servicio al cliente</h2>
+
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Asunto</mat-label>
+                                            <mat-select>
+                                                <mat-option>
+                                                    Quiero presentar una queja
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+
+                                        <mat-form-field appearance="outline">
+                                            <textarea matInput placeholder="¿Cuéntanos en que podemos ayudarte?"></textarea>
+                                        </mat-form-field>
+
+                                        <button class="enviar" (click)="enviarSoporte()">
+                                            Enviar
+                                        </button>
+                                    </div>
+
+                                    <div style="padding: 0 15px;" fxFlex="65" fxFlex.lt-md>
+                                        <div class="servicio">
+                                            <a href="">Historial de soporte</a>
+                                            <p>Ordenar por: <select id="">
+                                            <option value="">
+                                                Más recientes
+                                            </option>
+                                        </select></p>
+                                        </div>
+
+                                        <mat-card class="example-card" style="padding: 0 !important; box-shadow: none; margin-bottom: 15px; cursor: pointer;" (click)="option('soporte')">
+                                            <mat-card-header>
+                                                <mat-card-title>
+                                                    <label>Reclamo #81827</label>
+                                                    <a>Abierto</a>
+                                                </mat-card-title>
+                                            </mat-card-header>
+                                            <mat-card-content>
+                                                <p>
+                                                    Mi pedido no llegó a tiempo y el repartidor nunca contestó las llamadas. Lorem ipsum dolor sit amet consectetur.
+                                                </p>
+                                            </mat-card-content>
+                                        </mat-card>
+
+                                        <mat-card class="example-card" style="padding: 0 !important; box-shadow: none; margin-bottom: 15px; cursor: pointer;" (click)="option('soporte')">
+                                            <mat-card-header>
+                                                <mat-card-title>
+                                                    <label>Reclamo #81827</label>
+                                                    <a>Abierto</a>
+                                                </mat-card-title>
+                                            </mat-card-header>
+                                            <mat-card-content>
+                                                <p>
+                                                    Mi pedido no llegó a tiempo y el repartidor nunca contestó las llamadas. Lorem ipsum dolor sit amet consectetur.
+                                                </p>
+                                            </mat-card-content>
+                                        </mat-card>
+
+                                        <mat-card class="example-card" style="padding: 0 !important; box-shadow: none; margin-bottom: 15px; cursor: pointer;" (click)="option('soporte')">
+                                            <mat-card-header>
+                                                <mat-card-title>
+                                                    <label>Reclamo #81827</label>
+                                                    <a>Abierto</a>
+                                                </mat-card-title>
+                                            </mat-card-header>
+                                            <mat-card-content>
+                                                <p>
+                                                    Mi pedido no llegó a tiempo y el repartidor nunca contestó las llamadas. Lorem ipsum dolor sit amet consectetur.
+                                                </p>
+                                            </mat-card-content>
+                                        </mat-card>
+
+                                        <mat-card class="example-card" style="padding: 0 !important; box-shadow: none; margin-bottom: 15px; cursor: pointer;" (click)="option('soporte')">
+                                            <mat-card-header>
+                                                <mat-card-title>
+                                                    <label>Reclamo #81827</label>
+                                                    <a>Abierto</a>
+                                                </mat-card-title>
+                                            </mat-card-header>
+                                            <mat-card-content>
+                                                <p>
+                                                    Mi pedido no llegó a tiempo y el repartidor nunca contestó las llamadas. Lorem ipsum dolor sit amet consectetur.
+                                                </p>
+                                            </mat-card-content>
+                                        </mat-card>
+
+                                        <div class="mas">
+                                            <a href="">Cargas más <img src="../../../../assets/billetera/arrow.png" alt=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-soporte" id="form-soporte">
+                <div fxFlex="100" fxFlex.lt-md>
+                    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
+                        <div fxLayout="column" fxLayoutGap="20px" style="width: 100% !important;">
+                            <div fxLayout="row wrap" style="width: 100% !important;">
+                                <div style="padding:0 10px;" fxFlex="100" fxFlex.lt-md>
+                                    <div style="padding: 0 10px;" fxFlex="100" fxFlex.lt-md>
+                                        <h2>Reclamo #81827</h2>
+
+                                        <mat-card class="example-card" style="padding: 0 !important; box-shadow: none; margin-bottom: 15px; cursor: pointer;">
+                                            <mat-card-header>
+                                                <mat-card-title>
+                                                    <label>Estado: Abierto</label>
+                                                </mat-card-title>
+                                            </mat-card-header>
+                                            <mat-card-content>
+                                                <p>Mi pedido no llegó a tiempo y el repartidor nunca contestó las llamadas. Lorem ipsum dolor sit amet consectetur.</p>
+                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, a.</p>
+                                                <p style="font-size: 12px; font-weight: 600;">08 marzo 2020 - 10:20 a.m.</p>
+                                            </mat-card-content>
+                                        </mat-card>
+
+                                        <p style="color: rgb(47, 132, 87);"><u>Se ha creado un ticket de soporte</u></p>
+
+                                        <p>Se ha generado un número de caso con el que le haremos seguimiento a su solicitud. Lo podrás ver en tu historial de soporte y por correo electrónico
+                                        </p>
+
+                                        <p style="font-size: 13px;"><img src="../../../../assets/billetera/reloj.png" alt="" style="margin-right: 10px;">Tiempo de espera: 72 horas.</p>
+
+                                        <img src="../../../../assets/billetera/regresar.png" alt="" (click)="option('servicio')">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-email" id="form-email">
+                <div fxFlex="100" fxFlex.lt-md>
+                    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
+                        <div fxLayout="column" fxLayoutGap="20px" style="width: 100% !important;">
+                            <div fxLayout="row wrap" style="width: 100% !important;">
+                                <div style="padding:0 10px;" fxFlex="100" fxFlex.lt-md>
+                                    <div style="padding: 0 10px; text-align: center; margin: auto;" fxFlex="80" fxFlex.lt-md>
+                                        <img src="../../../../assets/billetera/email.png" alt="">
+
+                                        <h2>Correo Electrónico Certificado</h2>
+
+                                        <p>Es uns ervicio de correspondencia digital que permite enviar correos electroónicos certificados, con la misma validez juridica y probatoria de un correo físico.
+                                        </p>
+
+                                        <p>Nuestra plataforma permite obtener información en linea sobre el envió, entrega y lectua de la comunicación, junto con la prueb de entrega original en versión digital.
+                                        </p>
+
+                                        <div class="opciones">
+                                            <p>Escoge una opción para continuar:</p>
+                                            <div class="opc-btn">
+                                                <img src="../../../../assets/billetera/saldo.png">
+                                                <label>Utilizar <br>Saldo</label>
+                                            </div>
+                                            <div class="opc-btn">
+                                                <img src="../../../../assets/billetera/paquete.png">
+                                                <label>Adquirir <br>paquete</label>
+                                            </div>
+                                        </div>
+
+                                        <img src="../../../../assets/billetera/continuar.png" alt="" (click)="option('email-next')" style="margin-top: 15px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-email-next" id="form-email-next">
+                <div fxFlex="100" fxFlex.lt-md>
+                    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
+                        <div fxLayout="column" fxLayoutGap="20px" style="width: 100% !important;">
+                            <div fxLayout="row wrap" style="width: 100% !important;">
+                                <div style="padding:0 10px;" fxFlex="100" fxFlex.lt-md>
+                                    <div style="padding: 0 10px; text-align: center; margin: auto;" fxFlex="50" fxFlex.lt-md>
+                                        <img src="../../../../assets/billetera/email.png" alt="">
+
+                                        <h2>Correo Electrónico Certificado</h2>
+
+                                        <p>Es uns ervicio de correspondencia digital que permite enviar correos electroónicos certificados, con la misma validez juridica y probatoria de un correo físico.
+                                        </p>
+
+                                        <p>Nuestra plataforma permite obtener información en linea sobre el envió, entrega y lectua de la comunicación, junto con la prueb de entrega original en versión digital.
+                                        </p>
+
+                                        <div class="opciones">
+                                            <p>Escoge una opción para continuar:</p>
+                                            <div class="opc-btn">
+                                                <img src="../../../../assets/billetera/saldo.png">
+                                                <label>Utilizar <br>Saldo</label>
+                                            </div>
+                                            <div class="opc-btn">
+                                                <img src="../../../../assets/billetera/paquete.png">
+                                                <label>Adquirir <br>paquete</label>
+                                            </div>
+                                        </div>
+
+                                        <img src="../../../../assets/billetera/continuar.png" alt="" (click)="option('servicio')" style="margin-top: 15px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>

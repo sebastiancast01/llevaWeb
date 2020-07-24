@@ -1,0 +1,171 @@
+button {
+    outline: none;
+    background: transparent;
+    border: 0;
+}
+
+hr {
+    width: 98%;
+    color: #eee;
+}
+
+table {
+    width: 100%;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+h3 {
+    font-size: 17px;
+    text-align: center;
+    color: rgb(47, 132, 87);
+}
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+    color: rgb(47, 132, 87);
+}
+
+.form-historial,
+.form-servicio,
+.form-email,
+.form-soporte {
+    display: none !important;
+}
+
+.active {
+    color: rgb(47, 132, 87);
+}
+
+button.btn:active {
+    color: rgb(47, 132, 87);
+}
+
+.img-lleva {
+    width: 20%;
+}
+
+.img-billetera {
+    position: absolute;
+    top: 45px;
+    left: 100px;
+    width: 10%;
+}
+
+.saldo {
+    display: flex;
+}
+
+.saldo label {
+    width: 70%;
+    display: inline-block;
+    background: #eee;
+    padding: 18px;
+}
+
+.saldo label span {
+    float: right;
+    font-size: 23px;
+}
+
+.transacciones label {
+    font-size: 20px;
+    color: rgb(47, 132, 87);
+}
+
+.transacciones button {
+    float: right;
+    color: #aaa;
+}
+
+.transacciones button span {
+    margin-left: 10px;
+}
+
+.enviar {
+    width: 100%;
+    background: rgb(47, 132, 87);
+    padding: 10px;
+    border-radius: 0 1.5em;
+    font-size: 14px;
+    color: #fff;
+}
+
+.servicio {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 7px;
+}
+
+.servicio a {
+    color: rgb(47, 132, 87);
+}
+
+mat-card-header {
+    background: rgb(240, 179, 9);
+    position: relative;
+    padding: 10px;
+    border-left: 4px solid rgb(47, 132, 87);
+}
+
+mat-card-header label {
+    font-size: 15px;
+}
+
+mat-card-header a {
+    position: absolute;
+    right: 22px;
+    color: rgb(47, 132, 87);
+    font-size: 13px;
+}
+
+::ng-deep.mat-card-header-text {
+    margin: 0 !important;
+}
+
+::ng-deep.mat-card-title {
+    margin: 0 !important;
+}
+
+mat-card-content {
+    padding: 10px 10px 20px 10px;
+    background: #eee;
+}
+
+.mas {
+    text-align: center;
+}
+
+.mas a {
+    color: rgb(47, 132, 87);
+}
+
+.mas a img {
+    margin-left: 29px;
+}
+
+.opciones {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+.opciones p {
+    margin-right: 10px;
+    color: rgb(47, 132, 87);
+    margin-top: 18px;
+}
+
+.opc-btn {
+    display: flex;
+    padding: 10px;
+    background: #eee;
+    margin-right: 10px;
+}
+
+.opc-btn label {
+    margin-left: 10px;
+}

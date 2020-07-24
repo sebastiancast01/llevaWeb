@@ -15,6 +15,9 @@ import { RegistroComponent } from './components/register-aliado/registro/registr
 import { RegisterPhotosComponent } from './components/register-aliado/register-photos/register-photos.component';
 import { CargardocumentosComponent } from './components/register-aliado/register-photos/cargardocumentos/cargardocumentos.component';
 import { ProfileComponent } from './components/home/profile/profile.component';
+import { BilleteraComponent } from './components/home/billetera/billetera.component';
+import { ConfirmacionComponent } from './components/register-aliado/confirmacion/confirmacion.component';
+import { DetalleSoporteComponent } from './components/home/detalle-soporte/detalle-soporte.component';
 
 const routes: Routes = [
   { path: 'password', component: PasswordComponent },
@@ -31,6 +34,9 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'registro-photos', component: RegisterPhotosComponent },
   { path: 'cargar-documento', component: CargardocumentosComponent },
+  { path: 'confirmacion', component: ConfirmacionComponent },
+  { path: 'billetera', component: BilleteraComponent },
+  { path: 'detalle-soporte', component: DetalleSoporteComponent },
 ];
 @NgModule({
 

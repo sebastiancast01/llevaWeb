@@ -18,10 +18,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
 import { AgmCoreModule } from '@agm/core';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatNativeDateModule } from '@angular/material/core';
+// import { MatMomentDateModule } from "@angular/material-moment-adapter";
 
 // @ts-ignore
 // @ts-ignore
@@ -33,7 +38,12 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatInputModule,
     MatButtonModule,
     MatMenuModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSortModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatNativeDateModule, 
+    // MatMomentDateModule,
   ],
   exports: [
     MatFormFieldModule,
@@ -56,7 +66,12 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatDatepickerModule,
     MatGoogleMapsAutocompleteModule,
     MatProgressBarModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSortModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatNativeDateModule, 
+    // MatMomentDateModule,
   ]
 })
 export class AppMaterialModule {

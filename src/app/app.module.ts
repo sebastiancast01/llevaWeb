@@ -40,6 +40,10 @@ import { LibretadireccionesComponent } from './components/home/profile/libretadi
 import { EliminarComponent } from './components/home/profile/libretadirecciones/eliminar/eliminar.component';
 import { RegisterPhotosComponent } from './components/register-aliado/register-photos/register-photos.component';
 import { CargardocumentosComponent } from './components/register-aliado/register-photos/cargardocumentos/cargardocumentos.component';
+import { ConfirmacionComponent } from './components/register-aliado/confirmacion/confirmacion.component';
+import { BilleteraComponent } from './components/home/billetera/billetera.component';
+import { DetalleSoporteComponent } from './components/home/detalle-soporte/detalle-soporte.component';
+import { EnviarSoporteComponent } from './components/home/billetera/enviar-soporte/enviar-soporte.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +70,10 @@ import { CargardocumentosComponent } from './components/register-aliado/register
     EliminarComponent,
     RegisterPhotosComponent,
     CargardocumentosComponent,
+    ConfirmacionComponent,
+    BilleteraComponent,
+    DetalleSoporteComponent,
+    EnviarSoporteComponent,
   ],
   imports: [
     BrowserModule,
