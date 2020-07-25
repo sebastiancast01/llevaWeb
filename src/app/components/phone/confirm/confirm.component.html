@@ -27,27 +27,27 @@
 
                         <div style="padding: 10px;" fxFlex="20" fxFlex.lt-md>
                             <mat-form-field appearance="outline">
-                                <input matInput maxlength="1" required [(ngModel)]="n1">
+                                <input matInput maxlength="1" required [(ngModel)]="n1" id="input1" (keyup)="onKey($event, 1)">
                             </mat-form-field>
                         </div>
                         <div style="padding: 10px;" fxFlex="20" fxFlex.lt-md>
                             <mat-form-field appearance="outline">
-                                <input matInput maxlength="1" required [(ngModel)]="n2">
+                                <input matInput maxlength="1" required [(ngModel)]="n2" id="input2" (keyup)="onKey($event, 2)">
                             </mat-form-field>
                         </div>
                         <div style="padding: 10px;" fxFlex="20" fxFlex.lt-md>
                             <mat-form-field appearance="outline">
-                                <input matInput maxlength="1" required [(ngModel)]="n3">
+                                <input matInput maxlength="1" required [(ngModel)]="n3" id="input3" (keyup)="onKey($event, 3)">
                             </mat-form-field>
                         </div>
                         <div style="padding: 10px;" fxFlex="20" fxFlex.lt-md>
                             <mat-form-field appearance="outline">
-                                <input matInput maxlength="1" required [(ngModel)]="n4">
+                                <input matInput maxlength="1" required [(ngModel)]="n4" id="input4" (keyup)="onKey($event, 4)">
                             </mat-form-field>
                         </div>
                         <div style="padding: 10px;" fxFlex="20" fxFlex.lt-md>
                             <mat-form-field appearance="outline">
-                                <input matInput maxlength="1" required [(ngModel)]="n5">
+                                <input matInput maxlength="1" required [(ngModel)]="n5" id="input5" (keyup)="onKey($event, 5)">
                             </mat-form-field>
                         </div>
 
