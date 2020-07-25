@@ -1,77 +1,81 @@
 <div class="background">
-  <div style="padding-top: 13%;padding-bottom: 3% " fxLayout="row" fxLayoutAlign="center center">
-    <img src="../../../assets/login/lleva.png" height="0.7%" width="12%">
-  </div>
-
-  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
-
-
-    <div fxLayout="column wrap" fxLayoutAlign="center center" style="width: 20% !important;">
-
-      <div class="titles" style="padding: 10px;" fxFlex="100" fxFlex.lt-md>
-        <h1  class="titles">Coloca tu código SMS</h1>
-      </div>
-      <div class="centrar" style="padding: 10px;" fxFlex="100" fxFlex.lt-md>
-        <h5  >Acabamos de enviar un mensaje de texto al número {{ phone }}, por favor digita el código a continuación:</h5>
-      </div>
-      <div class="padd" fxFlex="50" fxFlex.lt-md>
-        <a style="color: #2F8457" routerLink="/phone">Editar el número</a>
-      </div>
-
-      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
-
-        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
-
-
-          <div fxLayout="row wrap" fxLayoutAlign="center center" style="width: 100% !important;">
-
-            <div style="padding: 10px;" fxFlex="20" fxFlex.lt-md>
-              <mat-form-field appearance="outline">
-                <input matInput maxlength="1" required [(ngModel)]="n1">
-              </mat-form-field>
-            </div>
-            <div style="padding: 10px;" fxFlex="20" fxFlex.lt-md>
-              <mat-form-field appearance="outline">
-                <input matInput maxlength="1" required [(ngModel)]="n2">
-              </mat-form-field>
-            </div>
-            <div style="padding: 10px;" fxFlex="20" fxFlex.lt-md>
-              <mat-form-field appearance="outline">
-                <input matInput maxlength="1" required [(ngModel)]="n3">
-              </mat-form-field>
-            </div>
-            <div style="padding: 10px;" fxFlex="20" fxFlex.lt-md>
-              <mat-form-field appearance="outline">
-                <input matInput maxlength="1" required [(ngModel)]="n4">
-              </mat-form-field>
-            </div>
-            <div style="padding: 10px;" fxFlex="20" fxFlex.lt-md>
-              <mat-form-field appearance="outline">
-                <input matInput maxlength="1" required [(ngModel)]="n5">
-              </mat-form-field>
-            </div>
-
-        </div>
-
-
-      </div>
-
-
-
-
-      <div class="padd contenedor" fxFlex="50" fxFlex.lt-md (click)="validarCodigo()">
-        <img src="../../../assets/password/rectangulo.png">
-        <div class="centrado">Confirmar código</div>
-
-      </div>
-      <div class="padd" fxFlex="50" fxFlex.lt-md>
-
-        <a style="color: #2F8457" (click)="enviarCodigo()">Volver a enviar SMS</a>
-      </div>
-
+    <div style="padding-top: 13%;padding-bottom: 3% " fxLayout="row" fxLayoutAlign="center center">
+        <img src="../../../assets/login/lleva.png" height="0.7%" width="12%">
     </div>
 
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
 
 
-  </div>
-  </div></div>
+        <div fxLayout="column wrap" fxLayoutAlign="center center" style="width: 20% !important;">
+
+            <div class="titles" style="padding: 10px;" fxFlex="100" fxFlex.lt-md>
+                <h1 class="titles">Coloca tu código SMS</h1>
+            </div>
+            <div class="centrar" style="padding: 10px;" fxFlex="100" fxFlex.lt-md>
+                <h5>Acabamos de enviar un mensaje de texto al número {{ phone }}, por favor digita el código a continuación:</h5>
+            </div>
+            <div class="padd" fxFlex="50" fxFlex.lt-md>
+                <a style="color: #2F8457" routerLink="/phone">Editar el número</a>
+            </div>
+
+            <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+
+                <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+
+
+                    <div fxLayout="row wrap" fxLayoutAlign="center center" style="width: 100% !important;">
+
+                        <div style="padding: 10px;" fxFlex="20" fxFlex.lt-md>
+                            <mat-form-field appearance="outline">
+                                <input matInput maxlength="1" required [(ngModel)]="n1">
+                            </mat-form-field>
+                        </div>
+                        <div style="padding: 10px;" fxFlex="20" fxFlex.lt-md>
+                            <mat-form-field appearance="outline">
+                                <input matInput maxlength="1" required [(ngModel)]="n2">
+                            </mat-form-field>
+                        </div>
+                        <div style="padding: 10px;" fxFlex="20" fxFlex.lt-md>
+                            <mat-form-field appearance="outline">
+                                <input matInput maxlength="1" required [(ngModel)]="n3">
+                            </mat-form-field>
+                        </div>
+                        <div style="padding: 10px;" fxFlex="20" fxFlex.lt-md>
+                            <mat-form-field appearance="outline">
+                                <input matInput maxlength="1" required [(ngModel)]="n4">
+                            </mat-form-field>
+                        </div>
+                        <div style="padding: 10px;" fxFlex="20" fxFlex.lt-md>
+                            <mat-form-field appearance="outline">
+                                <input matInput maxlength="1" required [(ngModel)]="n5">
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+                <div class="padd contenedor" fxFlex="50" fxFlex.lt-md (click)="validarCodigo()">
+                    <img src="../../../assets/password/rectangulo.png">
+                    <div class="centrado">Confirmar código</div>
+
+                </div>
+                <div class="padd" fxFlex="50" fxFlex.lt-md>
+
+                    <a style="color: #2F8457" (click)="enviarCodigo()">Volver a enviar SMS</a>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+    <mat-card style="background: #eee; padding: 15px 35px;">
+        <app-footer></app-footer>
+    </mat-card>
+</div>

@@ -6,6 +6,7 @@ import { Address } from 'ngx-google-places-autocomplete/objects/address';
 import { MapComponent } from './map/map.component';
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { ConfimarServicioComponent } from './confimar-servicio/confimar-servicio.component';
+import { CargaMasivaComponent } from './carga-masiva/carga-masiva.component';
 // import {ApiRegisterService} from '../../services/apiRegister/api-register.service';
 import { HeaderComponent } from './header/header.component';
 
@@ -141,8 +142,8 @@ export class HomeComponent implements OnInit {
   }
 
   cargaMasiva(){
-    const dialogRef = this.dialog.open(ConfimarServicioComponent, {
-      width: '400px',
+    const dialogRef = this.dialog.open(CargaMasivaComponent, {
+      width: '600px',
       data: { mode: 'create' }
     });
 

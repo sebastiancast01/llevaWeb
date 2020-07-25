@@ -7,27 +7,27 @@
         <mat-card fxFlex="25" style="height: 80vh;">
             <mat-list>
                 <mat-list-item>
-                    <button mat-button class="option active" id="cuenta" (click)="option('cuenta')">Mi cuenta</button>
+                    <button mat-button class="option active" id="cuenta" routerLink="/perfil">Mi cuenta</button>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <button mat-button class="option" id="direccion" (click)="option('direccion')">Libreta de direcciones</button>
+                    <button mat-button class="option" id="direccion" routerLink="/direcciones">Libreta de direcciones</button>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <button mat-button class="option" id="kms" (click)="option('kms')">KMS Lleva</button>
+                    <button mat-button class="option" id="kms" routerLink="/kms-lleva">KMS Lleva</button>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <button mat-button class="option" id="recomienda" (click)="option('recomienda')">Recomienda y gana</button>
+                    <button mat-button class="option" id="recomienda" routerLink="/recomienda">Recomienda y gana</button>
                 </mat-list-item>
                 <!-- <mat-divider></mat-divider> -->
             </mat-list>
         </mat-card>
 
-        <mat-card fxFlex="75" style="margin-left: 15px;">
+        <mat-card fxFlex="75" style="margin-left: 15px;" class="card-content">
             <div class="form-cuenta" id="form-cuenta">
-                <div fxFlex="15" fxFlex.lt-md style="margin: 25px;">
+                <div class="foto-perfil">
                     <img src="assets/perfil/photo.png">
                     <br>
                     <br>
@@ -36,217 +36,73 @@
                         </button>
                 </div>
 
-                <div fxFlex="85" fxFlex.lt-md style="margin: 35px 20px;">
-                    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
-                        <div fxLayout="column" fxLayoutGap="20px">
+                <div class="form-datos">
+                    <div class="inputs">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Nombre completo</mat-label>
+                            <input matInput placeholder="Nombre completo" required>
+                        </mat-form-field>
 
-                            <div fxLayout="row wrap" style="width: 90% !important;">
-
-                                <div style="padding: 10px;" fxFlex="50" fxFlex.lt-md>
-                                    <mat-form-field appearance="outline">
-                                        <mat-label>Nombre completo</mat-label>
-                                        <input matInput placeholder="Nombre completo" required>
-                                    </mat-form-field>
-                                </div>
-
-                                <div style="padding: 10px;" fxFlex="50" fxFlex.lt-md>
-                                    <mat-form-field appearance="outline">
-                                        <mat-label>Ciudad</mat-label>
-                                        <mat-select>
-                                            <mat-option>
-                                                Barranquilla
-                                            </mat-option>
-                                        </mat-select>
-                                    </mat-form-field>
-                                </div>
-
-                                <div style="padding: 10px;" fxFlex="50" fxFlex.lt-md>
-                                    <div fxFlex="30" fxFlex.lt-md>
-                                        <mat-form-field appearance="outline">
-                                            <mat-label>Tipo Doc</mat-label>
-                                            <select matNativeControl required>
-                                        <option value="CC">CC</option>
-                                        <option value="CE">CE</option>
-                                        <option value="PA">PA</option>
-                                        <option value="RC">RC</option>
-                                        <option value="TI">TI</option>
-                                      </select>
-                                        </mat-form-field>
-                                    </div>
-                                    <div style="padding-left: 10px;" fxFlex="70" fxFlex.lt-md>
-                                        <mat-form-field appearance="outline">
-                                            <mat-label>Número de documento</mat-label>
-                                            <input matInput type="number" placeholder="000000" required>
-                                        </mat-form-field>
-                                    </div>
-                                </div>
-                                <div style="padding: 10px;" fxFlex="50" fxFlex.lt-md>
-                                    <mat-form-field appearance="outline">
-                                        <mat-label>Correo electronico</mat-label>
-                                        <input matInput type="email" placeholder="nombre@email.com" required>
-                                    </mat-form-field>
-                                </div>
-                                <div style="padding: 10px;" fxFlex="50" fxFlex.lt-md>
-                                    <mat-form-field appearance="outline">
-                                        <mat-label>Celular</mat-label>
-                                        <input matInput type="email" placeholder="nombre@email.com" required>
-                                    </mat-form-field>
-                                </div>
-                                <div style="padding: 10px;" fxFlex="50" fxFlex.lt-md>
-                                    <mat-form-field appearance="outline">
-                                        <mat-label>Codigo Insertado</mat-label>
-                                        <input matInput type="email" placeholder="nombre@email.com" required>
-                                    </mat-form-field>
-                                </div>
-                                <div style="padding: 10px;" fxFlex="50" fxFlex.lt-md>
-                                    <div class="padd" fxFlex="50" fxFlex.lt-md>
-                                        <button (click)="actualizar()">
-                                                <img src="../../../assets/perfil/update.png">
-                                            </button>
-                                    </div>
-                                </div>
-
-                                <div style="padding: 10px;" fxFlex="50" fxFlex.lt-md>
-                                    <div class="padd" fxFlex="50" fxFlex.lt-md>
-                                        <button (click)="convertirEmpresa()">
-                                                <img src="../../../assets/perfil/convertir.png">
-                                            </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Ciudad</mat-label>
+                            <mat-select>
+                                <mat-option>
+                                    Barranquilla
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
                     </div>
-                </div>
-            </div>
 
-            <div class="form-direccion" id="form-direccion">
-                <div fxFlex="100" fxFlex.lt-md style="margin: 35px 20px;">
-                    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
-                        <div fxLayout="column" fxLayoutGap="20px" style="width: 60%; margin: auto;">
+                    <div class="inputs">
+                        <mat-form-field appearance="outline" style="width: 20%;">
+                            <mat-label>Tipo Doc</mat-label>
+                            <mat-select matNativeControl required>
+                                <mat-option value="CC">CC</mat-option>
+                                <mat-option value="CE">CE</mat-option>
+                                <mat-option value="PA">PA</mat-option>
+                                <mat-option value="RC">RC</mat-option>
+                                <mat-option value="TI">TI</mat-option>
+                            </mat-select>
+                        </mat-form-field>
 
-                            <div fxLayout="row wrap" style="width: 100% !important;">
-                                <p style="margin: auto;
-                                font-size: 30px; color: rgb(47, 132, 87);">Libreta de direcciones</p>
-                            </div>
+                        <mat-form-field appearance="outline" style="width: 26.5%;">
+                            <mat-label>Número de documento</mat-label>
+                            <input matInput type="number" placeholder="000000" required>
+                        </mat-form-field>
 
-                            <div fxLayout="row wrap" style="width: 100% !important;">
-                                <mat-list style="width: 100%;">
-                                    <mat-list-item>
-                                        <img src="../../../../assets/perfil/location.png" alt="" class="location">
-                                        <label style="font-size: 15px;"><b>Oficina - </b> Carrera 66 #55-44 Bancolombia</label>
-                                        <button class="delete" (click)="eliminarDireccion()">
-                                            <img src="../../../../assets/perfil/borrardir.png" alt="">
-                                        </button>
-                                    </mat-list-item>
-                                    <mat-divider style="width: 100% !important;"></mat-divider>
-                                    <mat-list-item>
-                                        <img src="../../../../assets/perfil/location.png" alt="" class="location">
-                                        <label style="font-size: 15px;"><b>Oficina - </b> Carrera 66 #55-44 Bancolombia</label>
-                                        <button class="delete" (click)="eliminarDireccion()">
-                                            <img src="../../../../assets/perfil/borrardir.png" alt="">
-                                        </button>
-                                    </mat-list-item>
-                                    <mat-divider style="width: 100% !important;"></mat-divider>
-                                    <mat-list-item>
-                                        <img src="../../../../assets/perfil/location.png" alt="" class="location">
-                                        <label style="font-size: 15px;"><b>Oficina - </b> Carrera 66 #55-44 Bancolombia</label>
-                                        <button class="delete" (click)="eliminarDireccion()">
-                                            <img src="../../../../assets/perfil/borrardir.png" alt="">
-                                        </button>
-                                    </mat-list-item>
-                                    <mat-divider style="width: 100% !important;"></mat-divider>
-                                    <mat-list-item>
-                                        <img src="../../../../assets/perfil/location.png" alt="" class="location">
-                                        <label style="font-size: 15px;"><b>Oficina - </b> Carrera 66 #55-44 Bancolombia</label>
-                                        <button class="delete" (click)="eliminarDireccion()">
-                                            <img src="../../../../assets/perfil/borrardir.png" alt="">
-                                        </button>
-                                    </mat-list-item>
-                                    <!-- <mat-divider></mat-divider> -->
-                                </mat-list>
-                                <button (click)="agregarDireccion()" style="margin: 15px auto;">
-                                    <img src="../../../../assets/perfil/nuevadir.png" alt="">
-                                </button>
-                            </div>
-
-                        </div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Correo electronico</mat-label>
+                            <input matInput type="email" placeholder="nombre@email.com" required>
+                        </mat-form-field>
                     </div>
-                </div>
-            </div>
 
-            <div class="form-kms" id="form-kms">
-                <div fxFlex="100" fxFlex.lt-md style="margin: 35px 20px;">
-                    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
-                        <div fxLayout="column" fxLayoutGap="20px" style="width: 70%; margin: auto;">
+                    <div class="inputs">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Celular</mat-label>
+                            <input matInput type="email" placeholder="nombre@email.com" required>
+                        </mat-form-field>
 
-                            <div fxLayout="row wrap" style="width: 100% !important;">
-                                <img style="margin: auto;" src="../../../../assets/perfil/kmslleva.png" alt="">
-                            </div>
-
-                            <div fxLayout="row" style="width: 100% !important;background: #eee;flex-flow: initial !important;">
-                                <div fxFlex="65" fxFlex.lt-md style="margin: 25px;">
-                                    <label>Kms Acumulados <span style="float: right;
-                                        font-size: 23px;
-                                        margin-right: 22px;
-                                        font-weight: 200;">2.238</span></label>
-                                </div>
-                                <hr style="color: #aaa;">
-                                <div fxFlex="35" fxFlex.lt-md style="margin: 25px; text-align: center;">
-                                    <label style="color: rgb(47, 132, 87);">Redimir Kms en beneficios</label>
-                                </div>
-                            </div>
-
-                            <div fxLayout="row wrap" style="width: 100% !important;">
-                                <label class="title-beneficios">Beneficios</label>
-                                <mat-tab-group mat-align-tabs="center" style="width: 100%;">
-                                    <mat-tab label="Activos">
-                                        <p>Mayo 10, 11:34 a.m<span style="float: right; color: rgb(47, 132, 87);">Vigente</span></p>
-                                        <hr>
-                                        <p>Haz recibido una bonificación por código de referido. Válido hasta 24/05/2020.</p>
-
-                                        <p style="font-weight: bold;">-5% dto</p>
-                                    </mat-tab>
-                                    <mat-tab label="Vencidos">Vencidos</mat-tab>
-                                </mat-tab-group>
-                            </div>
-                        </div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Codigo Insertado</mat-label>
+                            <input matInput type="email" placeholder="nombre@email.com" required>
+                        </mat-form-field>
                     </div>
-                </div>
-            </div>
 
-            <div class="form-recomienda" id="form-recomienda">
-                <div fxFlex="100" fxFlex.lt-md style="margin: 35px 20px;">
-                    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
-                        <div fxLayout="column" fxLayoutGap="20px" style="width: 70%; margin: auto;">
+                    <div class="inputs">
+                        <button (click)="actualizar()">
+                            <img src="../../../assets/perfil/update.png">
+                        </button>
 
-                            <div fxLayout="row wrap" style="width: 100% !important;">
-                                <img style="margin: auto;" src="../../../../assets/perfil/recomienda.png" alt="">
-                            </div>
-
-                            <div fxLayout="row" style="width: 100% !important;">
-                                <div fxFlex="100" fxFlex.lt-md style="margin: 25px;">
-
-                                    <h4>Recomiéndanos y gana <b>Beneficios</b></h4>
-                                    <p style="text-align: center;">Invita a tus amigos a utilizar nuestra app y por cada uno que ingrese con tu código recibirás beneficios en tus servicios.</p>
-                                </div>
-                            </div>
-
-                            <div fxLayout="row wrap" style="width: 100% !important; margin-top: -22px !important">
-                                <div class="copy-codigo" (click)="codigo()">
-                                    <label id="copy">COSHW</label>
-                                    <div class="fondo">
-                                        <img style="padding: 8px;" src="../../../../assets/perfil/copy.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <p class="msj-copy" id="msj-copy">Se ha copiado en tu portapapeles</p>
-                        </div>
+                        <button (click)="convertirEmpresa()">
+                            <img src="../../../assets/perfil/convertir.png">
+                        </button>
                     </div>
                 </div>
             </div>
         </mat-card>
     </div>
 </div>
+
+<mat-card style="background: #eee; padding: 15px 35px;">
+    <app-footer></app-footer>
+</mat-card>

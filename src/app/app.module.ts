@@ -43,7 +43,15 @@ import { CargardocumentosComponent } from './components/register-aliado/register
 import { ConfirmacionComponent } from './components/register-aliado/confirmacion/confirmacion.component';
 import { BilleteraComponent } from './components/home/billetera/billetera.component';
 import { DetalleSoporteComponent } from './components/home/detalle-soporte/detalle-soporte.component';
-import { EnviarSoporteComponent } from './components/home/billetera/enviar-soporte/enviar-soporte.component';
+import { EnviarSoporteComponent } from './components/home/servicio-cliente/enviar-soporte/enviar-soporte.component';
+import { HistorialComponent } from './components/home/historial/historial.component';
+import { ServicioClienteComponent } from './components/home/servicio-cliente/servicio-cliente.component';
+import { EmailCertificadoComponent } from './components/home/email-certificado/email-certificado.component';
+import { DireccionesComponent } from './components/home/profile/direcciones/direcciones.component';
+import { KmsLlevaComponent } from './components/home/profile/kms-lleva/kms-lleva.component';
+import { RecomiendaComponent } from './components/home/profile/recomienda/recomienda.component';
+import { CargaMasivaComponent } from './components/home/carga-masiva/carga-masiva.component';
+import { FooterComponent } from './components/home/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +82,14 @@ import { EnviarSoporteComponent } from './components/home/billetera/enviar-sopor
     BilleteraComponent,
     DetalleSoporteComponent,
     EnviarSoporteComponent,
+    HistorialComponent,
+    ServicioClienteComponent,
+    EmailCertificadoComponent,
+    DireccionesComponent,
+    KmsLlevaComponent,
+    RecomiendaComponent,
+    CargaMasivaComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,63 @@
+button {
+    outline: none;
+    background: transparent;
+    border: 0;
+}
+
+.active {
+    color: rgb(47, 132, 87);
+}
+
+.form-direccion {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.form-direccion p {
+    margin: 15px auto;
+    font-size: 30px;
+    color: rgb(47, 132, 87);
+}
+
+mat-divider {
+    width: 50% !important;
+    left: auto !important;
+}
+
+.location {
+    margin: 15px;
+}
+
+.delete {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+}
+
+.lista {
+    overflow-y: auto;
+}
+
+.lista mat-list {
+    min-width: 440px;
+}
+
+@media (max-width: 1250px) {
+    .form-direccion {
+        width: 60%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .form-direccion {
+        width: 70%;
+    }
+}
+
+@media (max-width: 500px) {
+    .form-direccion {
+        width: 100%;
+    }
+}

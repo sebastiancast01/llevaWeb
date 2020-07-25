@@ -1,0 +1,60 @@
+.active {
+    color: rgb(47, 132, 87);
+}
+
+h4 {
+    font-size: 20px;
+    color: rgb(47, 132, 87);
+    margin-bottom: 20px;
+}
+
+.form-recomienda {
+    padding: 50px 0;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+}
+
+.copy-codigo {
+    margin: 20px auto 0;
+    width: 200px;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    height: 23px;
+    cursor: pointer;
+}
+
+.copy-codigo label {
+    font-size: 24px;
+    font-weight: initial;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+}
+
+.fondo {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    width: 32px;
+    height: 32px;
+    background: #eee;
+    border-radius: 19px;
+    text-align: center;
+}
+
+.msj-copy {
+    display: none;
+    text-align: center;
+    margin-top: 5px;
+    color: rgb(47, 132, 87);
+    font-size: 12px;
+}
+
+@media (max-width: 500px) {
+    .form-recomienda {
+        width: 100%;
+    }
+}

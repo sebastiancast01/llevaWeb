@@ -1,0 +1,47 @@
+.title,
+.content {
+    text-align: center;
+}
+
+h2 {
+    color: rgb(47, 132, 87);
+}
+
+.content {
+    margin-top: 10px;
+}
+
+.input {
+    width: 100%;
+}
+
+.input label {
+    background: #eee;
+    width: 100%;
+    display: block;
+    height: 40px;
+    position: relative;
+}
+
+.input label span {
+    position: absolute;
+    right: 1px;
+    padding: 8px;
+    background: #aaa;
+    width: 100px;
+    text-align: center;
+    color: #fff;
+}
+
+.botones {
+    text-align: center;
+}
+
+.botones img {
+    display: block;
+    margin: auto;
+}
+
+.botones a {
+    color: rgb(47, 132, 87);
+}

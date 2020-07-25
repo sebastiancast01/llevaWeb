@@ -1,0 +1,59 @@
+<mat-card>
+    <app-header></app-header>
+</mat-card>
+
+<div class="gris">
+    <div fxLayout="row" fxLayout.lt-md="column" style="padding: 24px;">
+        <mat-card fxFlex="25" style="height: 80vh;">
+            <mat-list>
+                <mat-list-item>
+                    <button mat-button class="option" id="cuenta" routerLink="/perfil">Mi cuenta</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button class="option" id="direccion" routerLink="/direcciones">Libreta de direcciones</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button class="option active" id="kms" routerLink="/kms-lleva">KMS Lleva</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button class="option" id="recomienda" routerLink="/recomienda">Recomienda y gana</button>
+                </mat-list-item>
+                <!-- <mat-divider></mat-divider> -->
+            </mat-list>
+        </mat-card>
+
+        <mat-card fxFlex="75" style="margin-left: 15px;" class="card-content">
+            <div class="form-kms" id="form-kms">
+                <img src="../../../../assets/perfil/kmslleva.png" alt="">
+
+                <div class="header-kms">
+                    <div class="acumulados">
+                        <label>Kms Acumulados<span>2.238</span></label>
+                    </div>
+                    <div class="redimir">
+                        <label style="color: rgb(47, 132, 87);">Redimir Kms en beneficios</label>
+                    </div>
+                </div>
+
+                <label class="title-beneficios">Beneficios</label>
+                <mat-tab-group mat-align-tabs="center" style="width: 100%;">
+                    <mat-tab label="Activos">
+                        <p>Mayo 10, 11:34 a.m<span style="float: right; color: rgb(47, 132, 87);">Vigente</span></p>
+                        <hr>
+                        <p>Haz recibido una bonificación por código de referido. Válido hasta 24/05/2020.</p>
+
+                        <p style="font-weight: bold;">-5% dto</p>
+                    </mat-tab>
+                    <mat-tab label="Vencidos">Vencidos</mat-tab>
+                </mat-tab-group>
+            </div>
+        </mat-card>
+    </div>
+</div>
+
+<mat-card style="background: #eee; padding: 15px 35px;">
+    <app-footer></app-footer>
+</mat-card>

@@ -1,0 +1,117 @@
+button {
+    outline: none;
+    background: transparent;
+    border: 0;
+}
+
+hr {
+    width: 98%;
+    color: #eee;
+}
+
+table {
+    width: 100%;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+h3 {
+    font-size: 20px;
+    text-align: center;
+    color: rgb(47, 132, 87);
+}
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+    color: rgb(47, 132, 87);
+}
+
+.active {
+    color: rgb(47, 132, 87);
+}
+
+.filtros {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filtros label {
+    margin: 0 10px;
+}
+
+.filtros mat-form-field {
+    margin: 0 10px;
+}
+
+.resultados {
+    padding: 10px;
+}
+
+.resultados label {
+    font-size: 20px;
+    color: rgb(47, 132, 87);
+}
+
+.resultados button {
+    float: right;
+    color: #aaa;
+}
+
+.resultados button span {
+    margin-left: 5px;
+}
+
+.table-historial {
+    overflow-y: auto;
+}
+
+.table-historial table {
+    min-width: 600px;
+}
+
+mat-paginator {
+    width: 100%;
+    min-width: 600px;
+}
+
+@media (max-width: 1100px) {
+    .filtros {
+        display: block;
+        text-align: center;
+    }
+    .filtros mat-form-field {
+        margin: 0;
+    }
+}
+
+@media (max-width: 960px) {
+    .filtros {
+        display: flex;
+        justify-content: space-between;
+    }
+    .filtros mat-form-field {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 850px) {
+    .filtros {
+        display: block;
+        text-align: center;
+    }
+    .filtros mat-form-field {
+        margin: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .resultados label {
+        font-size: 14px;
+    }
+    .resultados button span {
+        display: none;
+    }
+}

@@ -17,7 +17,12 @@ import { CargardocumentosComponent } from './components/register-aliado/register
 import { ProfileComponent } from './components/home/profile/profile.component';
 import { BilleteraComponent } from './components/home/billetera/billetera.component';
 import { ConfirmacionComponent } from './components/register-aliado/confirmacion/confirmacion.component';
-import { DetalleSoporteComponent } from './components/home/detalle-soporte/detalle-soporte.component';
+import { HistorialComponent } from './components/home/historial/historial.component';
+import { ServicioClienteComponent } from './components/home/servicio-cliente/servicio-cliente.component';
+import { EmailCertificadoComponent } from './components/home/email-certificado/email-certificado.component';
+import { DireccionesComponent } from './components/home/profile/direcciones/direcciones.component';
+import { KmsLlevaComponent } from './components/home/profile/kms-lleva/kms-lleva.component';
+import { RecomiendaComponent } from './components/home/profile/recomienda/recomienda.component';
 
 const routes: Routes = [
   { path: 'password', component: PasswordComponent },
@@ -36,7 +41,12 @@ const routes: Routes = [
   { path: 'cargar-documento', component: CargardocumentosComponent },
   { path: 'confirmacion', component: ConfirmacionComponent },
   { path: 'billetera', component: BilleteraComponent },
-  { path: 'detalle-soporte', component: DetalleSoporteComponent },
+  { path: 'historial', component: HistorialComponent },
+  { path: 'servicio-cliente', component: ServicioClienteComponent },
+  { path: 'email-certificado', component: EmailCertificadoComponent },
+  { path: 'direcciones', component: DireccionesComponent },
+  { path: 'kms-lleva', component: KmsLlevaComponent },
+  { path: 'recomienda', component: RecomiendaComponent },
 ];
 @NgModule({
 

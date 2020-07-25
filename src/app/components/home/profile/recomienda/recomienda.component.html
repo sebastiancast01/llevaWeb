@@ -1,0 +1,50 @@
+<mat-card>
+    <app-header></app-header>
+</mat-card>
+
+<div class="gris">
+    <div fxLayout="row" fxLayout.lt-md="column" style="padding: 24px;">
+        <mat-card fxFlex="25" style="height: 80vh;">
+            <mat-list>
+                <mat-list-item>
+                    <button mat-button class="option" id="cuenta" routerLink="/perfil">Mi cuenta</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button class="option" id="direccion" routerLink="/direcciones">Libreta de direcciones</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button class="option" id="kms" routerLink="/kms-lleva">KMS Lleva</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button class="option active" id="recomienda" routerLink="/recomienda">Recomienda y gana</button>
+                </mat-list-item>
+                <!-- <mat-divider></mat-divider> -->
+            </mat-list>
+        </mat-card>
+
+        <mat-card fxFlex="75" style="margin-left: 15px;" class="card-content">
+            <div class="form-recomienda" id="form-recomienda">
+                <img style="margin: auto;" src="../../../../assets/perfil/recomienda.png" alt="">
+
+                <h4>Recomiéndanos y gana <b>Beneficios</b></h4>
+                <p>Invita a tus amigos a utilizar nuestra app y por cada uno que ingrese con tu código recibirás beneficios en tus servicios.</p>
+
+                <div class="copy-codigo" (click)="codigo()">
+                    <label id="copy">COSHW</label>
+                    <div class="fondo">
+                        <img style="padding: 8px;" src="../../../../assets/perfil/copy.png" alt="">
+                    </div>
+                </div>
+
+                <p class="msj-copy" id="msj-copy">Se ha copiado en tu portapapeles</p>
+            </div>
+        </mat-card>
+    </div>
+</div>
+
+<mat-card style="background: #eee; padding: 15px 35px;">
+    <app-footer></app-footer>
+</mat-card>

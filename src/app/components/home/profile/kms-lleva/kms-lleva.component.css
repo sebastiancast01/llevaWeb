@@ -1,0 +1,93 @@
+.active {
+    color: rgb(47, 132, 87);
+}
+
+.form-kms {
+    width: 60%;
+    margin: auto;
+}
+
+.form-kms img {
+    display: block;
+    margin: 20px auto;
+}
+
+.header-kms {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    background: #eee;
+}
+
+.acumulados,
+.redimir {
+    padding: 10px;
+}
+
+.acumulados {
+    position: relative;
+    width: 65%;
+}
+
+.acumulados label span {
+    position: absolute;
+    right: 10px;
+    font-size: 20px;
+}
+
+.redimir {
+    width: 45%;
+    border-left: 2px solid #aaa;
+}
+
+.title-beneficios {
+    text-align: center;
+    color: rgb(47, 132, 87);
+    font-size: 20px;
+    display: block;
+    margin-top: 15px;
+}
+
+::ng-deep.mat-tab-label,
+ ::ng-deep.mat-tab-label-active {
+    min-width: 0!important;
+    width: 100%;
+}
+
+::ng-deep.mat-ink-bar {
+    background: rgb(47, 132, 87) !important;
+}
+
+::ng-deep.mat-tab-body {
+    margin-top: 10px;
+    background: #eee !important;
+    padding: 10px;
+}
+
+@media (max-width: 1120px) {
+    .form-kms {
+        width: 80%;
+    }
+}
+
+@media (max-width: 660px) {
+    .form-kms {
+        width: 100%;
+    }
+    .header-kms {
+        display: block;
+    }
+    .acumulados,
+    .redimir {
+        width: 100%;
+    }
+    .acumulados label span {
+        position: absolute;
+        right: 30px;
+        font-size: 20px;
+    }
+    .redimir {
+        border: 0 !important;
+        text-align: center;
+    }
+}

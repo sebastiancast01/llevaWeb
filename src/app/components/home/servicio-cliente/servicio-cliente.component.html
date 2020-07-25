@@ -1,0 +1,158 @@
+<mat-card>
+    <app-header></app-header>
+</mat-card>
+
+<div class="gris">
+    <div fxLayout="row" fxLayout.lt-md="column" style="padding: 24px;">
+        <mat-card fxFlex="25" style="height: 80vh;">
+            <mat-list>
+                <mat-list-item>
+                    <button mat-button routerLink="/billetera">Billetera Lleva</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button routerLink="/historial">Historial de servicios</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button class="active" routerLink="/servicio-cliente">Servicio al cliente</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button routerLink="/email-certificado">Email certificado</button>
+                </mat-list-item>
+                <!-- <mat-divider></mat-divider> -->
+            </mat-list>
+        </mat-card>
+
+        <mat-card fxFlex="75" style="margin-left: 15px;" class="card-content">
+
+            <div class="form-servicio" id="form-servicio">
+                <div class="form-mensaje">
+                    <h2>Servicio al cliente</h2>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Asunto</mat-label>
+                        <mat-select>
+                            <mat-option>
+                                Quiero presentar una queja
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <textarea matInput placeholder="¿Cuéntanos en que podemos ayudarte?"></textarea>
+                    </mat-form-field>
+
+                    <button class="enviar" (click)="enviarSoporte()">
+                        Enviar
+                    </button>
+                </div>
+
+                <div class="historial-soporte">
+                    <div class="servicio">
+                        <a href="">Historial de soporte</a>
+                        <p>Ordenar por: <select id="">
+                        <option value="">
+                            Más recientes
+                        </option>
+                    </select></p>
+                    </div>
+
+                    <mat-card class="example-card" style="padding: 0 !important; box-shadow: none; margin-bottom: 15px; cursor: pointer;" (click)="option('soporte')">
+                        <mat-card-header>
+                            <mat-card-title>
+                                <label>Reclamo #81827</label>
+                                <a>Abierto</a>
+                            </mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>
+                                Mi pedido no llegó a tiempo y el repartidor nunca contestó las llamadas. Lorem ipsum dolor sit amet consectetur.
+                            </p>
+                        </mat-card-content>
+                    </mat-card>
+
+                    <mat-card class="example-card" style="padding: 0 !important; box-shadow: none; margin-bottom: 15px; cursor: pointer;" (click)="option('soporte')">
+                        <mat-card-header>
+                            <mat-card-title>
+                                <label>Reclamo #81827</label>
+                                <a>Abierto</a>
+                            </mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>
+                                Mi pedido no llegó a tiempo y el repartidor nunca contestó las llamadas. Lorem ipsum dolor sit amet consectetur.
+                            </p>
+                        </mat-card-content>
+                    </mat-card>
+
+                    <mat-card class="example-card" style="padding: 0 !important; box-shadow: none; margin-bottom: 15px; cursor: pointer;" (click)="option('soporte')">
+                        <mat-card-header>
+                            <mat-card-title>
+                                <label>Reclamo #81827</label>
+                                <a>Abierto</a>
+                            </mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>
+                                Mi pedido no llegó a tiempo y el repartidor nunca contestó las llamadas. Lorem ipsum dolor sit amet consectetur.
+                            </p>
+                        </mat-card-content>
+                    </mat-card>
+
+                    <mat-card class="example-card" style="padding: 0 !important; box-shadow: none; margin-bottom: 15px; cursor: pointer;" (click)="option('soporte')">
+                        <mat-card-header>
+                            <mat-card-title>
+                                <label>Reclamo #81827</label>
+                                <a>Abierto</a>
+                            </mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>
+                                Mi pedido no llegó a tiempo y el repartidor nunca contestó las llamadas. Lorem ipsum dolor sit amet consectetur.
+                            </p>
+                        </mat-card-content>
+                    </mat-card>
+
+                    <div class="mas">
+                        <a href="">Cargas más <img src="../../../../assets/billetera/arrow.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-soporte" id="form-soporte">
+                <div class="detalle-soporte">
+                    <h2>Reclamo #81827</h2>
+
+                    <mat-card class="example-card" style="padding: 0 !important; box-shadow: none; margin-bottom: 15px; cursor: pointer;">
+                        <mat-card-header>
+                            <mat-card-title>
+                                <label>Estado: Abierto</label>
+                            </mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>Mi pedido no llegó a tiempo y el repartidor nunca contestó las llamadas. Lorem ipsum dolor sit amet consectetur.</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, a.</p>
+                            <p style="font-size: 12px; font-weight: 600;">08 marzo 2020 - 10:20 a.m.</p>
+                        </mat-card-content>
+                    </mat-card>
+
+                    <p style="color: rgb(47, 132, 87);"><u>Se ha creado un ticket de soporte</u></p>
+
+                    <p>Se ha generado un número de caso con el que le haremos seguimiento a su solicitud. Lo podrás ver en tu historial de soporte y por correo electrónico
+                    </p>
+
+                    <p style="font-size: 13px;"><img src="../../../../assets/billetera/reloj.png" alt="" style="margin-right: 10px;">Tiempo de espera: 72 horas.</p>
+
+                    <img src="../../../../assets/billetera/regresar.png" alt="" (click)="option('servicio')" class="regresar">
+                </div>
+            </div>
+
+        </mat-card>
+    </div>
+</div>
+
+<mat-card style="background: #eee; padding: 15px 35px;">
+    <app-footer></app-footer>
+</mat-card>

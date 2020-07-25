@@ -1,0 +1,150 @@
+<mat-card>
+    <app-header></app-header>
+</mat-card>
+
+<div class="gris">
+    <div fxLayout="row" fxLayout.lt-md="column" style="padding: 24px;">
+        <mat-card fxFlex="25" style="height: 80vh;">
+            <mat-list>
+                <mat-list-item>
+                    <button mat-button routerLink="/billetera">Billetera Lleva</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button routerLink="/historial">Historial de servicios</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button routerLink="/servicio-cliente">Servicio al cliente</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button class="active" routerLink="/email-certificado">Email certificado</button>
+                </mat-list-item>
+                <!-- <mat-divider></mat-divider> -->
+            </mat-list>
+        </mat-card>
+
+        <mat-card fxFlex="75" style="margin-left: 15px;" class="card-content">
+
+            <div class="form-email" id="form-email">
+                <img src="../../../../assets/billetera/email.png" alt="">
+
+                <h2>Correo Electrónico Certificado</h2>
+
+                <p>Es uns ervicio de correspondencia digital que permite enviar correos electroónicos certificados, con la misma validez juridica y probatoria de un correo físico.
+                </p>
+
+                <p>Nuestra plataforma permite obtener información en linea sobre el envió, entrega y lectua de la comunicación, junto con la prueb de entrega original en versión digital.
+                </p>
+
+                <div class="opciones">
+                    <p>Escoge una opción para continuar:</p>
+                    <div class="opc-btn">
+                        <img src="../../../../assets/billetera/saldo.png">
+                        <label>Utilizar <br>Saldo</label>
+                    </div>
+                    <div class="opc-btn">
+                        <img src="../../../../assets/billetera/paquete.png">
+                        <label>Adquirir <br>paquete</label>
+                    </div>
+                </div>
+
+                <img src="../../../../assets/billetera/continuar.png" alt="" (click)="option('email-next')" style="margin-top: 15px;">
+            </div>
+
+            <div class="form-email-next" id="form-email-next">
+                <div class="saldo">
+                    <img src="../../../../assets/billetera/saldo.png" alt="">
+                    <p>Tu saldo es</p>
+                    <label>$150,990</label>
+                </div>
+
+                <mat-tab-group style="width: 100%;">
+                    <mat-tab label="Enviar correo">
+                        <mat-form-field appearance="outline" style="margin-top: 10px;">
+                            <mat-label>Para</mat-label>
+                            <input matInput type="text">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Asunto</mat-label>
+                            <input matInput type="text">
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline">
+                            <mat-label>Cuerpo del correo</mat-label>
+                            <textarea matInput></textarea>
+                        </mat-form-field>
+
+                        <label for="files"><img src="../../../../assets/billetera/archivos.png" alt=""></label>
+                        <input type="file" id="files" style="display: none;">
+
+                        <div class="btn-enviar">
+                            <img src="../../../../assets/billetera/enviar.png" alt="" style="margin-top: 15px; width: 100%;">
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Estado de correo">
+                        <mat-form-field appearance="outline" style="margin-top: 10px;">
+                            <mat-label>Buscar correo</mat-label>
+                            <input matInput type="text">
+                        </mat-form-field>
+
+                        <div class="mas">
+                            <a href="">Más recientes</a>
+                        </div>
+
+                        <mat-card class="example-card" style="padding: 0 !important; box-shadow: none; margin-bottom: 10px;">
+                            <mat-card-header>
+                                <mat-card-title>
+                                    <label><b>Asunto:</b> Formulario de crédito</label>
+                                    <span><img src="../../../../assets/register/arrow.png" alt=""></span>
+                                </mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                                <p>
+                                    Miércoles 20, 10:30 a.m
+                                </p>
+                                <a href="">Leido</a>
+                            </mat-card-content>
+                        </mat-card>
+
+                        <mat-card class="example-card" style="padding: 0 !important; box-shadow: none; margin-bottom: 10px;">
+                            <mat-card-header>
+                                <mat-card-title>
+                                    <label><b>Asunto:</b> Formulario de crédito</label>
+                                    <span><img src="../../../../assets/register/arrow.png" alt=""></span>
+                                </mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                                <p>
+                                    Miércoles 20, 10:30 a.m
+                                </p>
+                                <a href="">Leido</a>
+                            </mat-card-content>
+                        </mat-card>
+
+                        <mat-card class="example-card" style="padding: 0 !important; box-shadow: none; margin-bottom: 10px;">
+                            <mat-card-header>
+                                <mat-card-title>
+                                    <label><b>Asunto:</b> Formulario de crédito</label>
+                                    <span><img src="../../../../assets/register/arrow.png" alt=""></span>
+                                </mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                                <p>
+                                    Miércoles 20, 10:30 a.m
+                                </p>
+                                <a href="">Leido</a>
+                            </mat-card-content>
+                        </mat-card>
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+        </mat-card>
+    </div>
+</div>
+
+<mat-card style="background: #eee; padding: 15px 35px;">
+    <app-footer></app-footer>
+</mat-card>

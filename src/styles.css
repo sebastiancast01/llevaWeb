@@ -6,10 +6,18 @@ body {
 }
 
 body {
+    background: #eee;
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .gris {
     background: #eee;
+}
+
+@media (max-width: 960px) {
+    .card-content {
+        margin-left: 0 !important;
+        margin-top: 15px;
+    }
 }

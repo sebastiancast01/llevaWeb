@@ -7,11 +7,11 @@
         <mat-card fxFlex="25" style="height: 80vh;">
             <mat-list>
                 <mat-list-item>
-                    <button mat-button class="active" routerLink="/billetera">Billetera Lleva</button>
+                    <button mat-button routerLink="/billetera">Billetera Lleva</button>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
-                    <button mat-button routerLink="/historial">Historial de servicios</button>
+                    <button mat-button class="active" routerLink="/historial">Historial de servicios</button>
                 </mat-list-item>
                 <mat-divider></mat-divider>
                 <mat-list-item>
@@ -25,34 +25,49 @@
             </mat-list>
         </mat-card>
 
-        <mat-card fxFlex="75" style="margin-left: 15px; padding: 16px 30px !important;" class="card-content">
-            <div class="form-billetera" id="form-billetera">
-                <div class="head-billetera">
-                    <div class="left-billetera">
-                        <img src="../../../../assets/billetera/lleva.png" alt="" class="img-lleva">
-                        <img src="../../../../assets/billetera/billetera.png" alt="" class="img-billetera">
-                    </div>
+        <mat-card fxFlex="75" style="margin-left: 15px;" class="card-content">
 
-                    <div class="right-billetera">
-                        <div class="saldo">
-                            <label>Tu saldo es</label>
-                            <span>$150,990</span>
-                        </div>
-                        <div class="recarga">
-                            <img src="../../../../assets/billetera/btn-recarga.png" alt="">
-                        </div>
-                    </div>
+            <div class="form-historial" id="form-historial">
+                <div class="head-historial">
+                    <h3>Historial de servicios</h3>
+                </div>
+
+                <div class="filtros">
+                    <label style="line-height: 50px;">Filtrar</label>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Filtrar por tipo de servicio</mat-label>
+                        <mat-select>
+                            <mat-option>
+                                Diligencia
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <input matInput [matDatepicker]="picker" placeholder="Rango de fecha">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="N° de Orden">
+                    </mat-form-field>
                 </div>
                 <hr>
-                <div class="transacciones">
-                    <label>Historial de transacciones</label>
+                <div class="resultados">
+                    <label>Resulatados de la búsqueda</label>
                     <button>
                         <img src="../../../../assets/billetera/descargar.png" alt="">
                         <span>Descargar en CVS</span>
                     </button>
+                    <button>
+                        <img src="../../../../assets/billetera/eliminar.png" alt="">
+                        <span>Eliminar</span>
+                    </button>
                 </div>
                 <hr>
-                <div class="table-billetera">
+                <div class="table-historial">
                     <div class="mat-elevation-z8">
                         <table mat-table [dataSource]="dataSource" matSort>
 
@@ -107,6 +122,7 @@
                     </div>
                 </div>
             </div>
+
         </mat-card>
     </div>
 </div>

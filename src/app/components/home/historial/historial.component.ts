@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { SelectionModel } from '@angular/cdk/collections';
 
-export interface Billetera {
+export interface Historial {
   fecha: string;
   tipo: string;
   referencia: string;
@@ -12,7 +12,7 @@ export interface Billetera {
   kms: number;
 }
 
-const BULLETERA_DATA: Billetera[] = [
+const HISTORIAL_DATA: Historial[] = [
   { fecha: '2020-05-11 / 10:20', tipo: 'Hydrogen', referencia: 'Recarga de salbo billetera', valor: 125.990, kms: 0.2 },
   { fecha: '2020-05-11 / 10:20', tipo: 'Hydrogen', referencia: 'Compra de plan corporativo', valor: 125.990, kms: 0.2 },
   { fecha: '2020-05-11 / 10:20', tipo: 'Hydrogen', referencia: 'Recarga de salbo billetera', valor: 125.990, kms: 0.2 },
@@ -26,27 +26,26 @@ const BULLETERA_DATA: Billetera[] = [
 ];
 
 @Component({
-  selector: 'app-billetera',
-  templateUrl: './billetera.component.html',
-  styleUrls: ['./billetera.component.css']
+  selector: 'app-historial',
+  templateUrl: './historial.component.html',
+  styleUrls: ['./historial.component.css']
 })
-export class BilleteraComponent implements OnInit {
+export class HistorialComponent implements OnInit {
 
   constructor() { }
   @ViewChild(MatSort, { static: false }) sort: MatSort;
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
   displayedColumns: string[] = ['select', 'fecha', 'tipo', 'referencia', 'valor', 'kms'];
-  dataSource = new MatTableDataSource(BULLETERA_DATA);
-  selection = new SelectionModel<Billetera>(true, []);
+  dataSource = new MatTableDataSource(HISTORIAL_DATA);
+  selection = new SelectionModel<Historial>(true, []);
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
 
     console.log(this.dataSource)
   }
-
 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
@@ -63,7 +62,7 @@ export class BilleteraComponent implements OnInit {
   }
 
   /** The label for the checkbox on the passed row */
-  checkboxLabel(row?: Billetera): string {
+  checkboxLabel(row?: Historial): string {
     if (!row) {
       return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
     }

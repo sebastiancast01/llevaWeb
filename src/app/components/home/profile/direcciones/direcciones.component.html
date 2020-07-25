@@ -1,0 +1,79 @@
+<mat-card>
+    <app-header></app-header>
+</mat-card>
+
+<div class="gris">
+    <div fxLayout="row" fxLayout.lt-md="column" style="padding: 24px;">
+        <mat-card fxFlex="25" style="height: 80vh;">
+            <mat-list>
+                <mat-list-item>
+                    <button mat-button id="cuenta" routerLink="/perfil">Mi cuenta</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button class="active" id="direccion" routerLink="/direcciones">Libreta de direcciones</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button class="option" id="kms" routerLink="/kms-lleva">KMS Lleva</button>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <button mat-button class="option" id="recomienda" routerLink="/recomienda">Recomienda y gana</button>
+                </mat-list-item>
+                <!-- <mat-divider></mat-divider> -->
+            </mat-list>
+        </mat-card>
+
+        <mat-card fxFlex="75" style="margin-left: 15px;" class="card-content">
+            <div class="form-direccion" id="form-direccion">
+
+                <p>Libreta de direcciones</p>
+
+                <div class="lista">
+                    <mat-list style="width: 100%;">
+                        <mat-list-item>
+                            <img src="../../../../assets/perfil/location.png" alt="" class="location">
+                            <label style="font-size: 15px;"><b>Oficina - </b> Carrera 66 #55-44 Bancolombia</label>
+                            <button class="delete" (click)="eliminarDireccion()">
+                                                <img src="../../../../assets/perfil/borrardir.png" alt="">
+                                            </button>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item>
+                            <img src="../../../../assets/perfil/location.png" alt="" class="location">
+                            <label style="font-size: 15px;"><b>Oficina - </b> Carrera 66 #55-44 Bancolombia</label>
+                            <button class="delete" (click)="eliminarDireccion()">
+                                                <img src="../../../../assets/perfil/borrardir.png" alt="">
+                                            </button>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item>
+                            <img src="../../../../assets/perfil/location.png" alt="" class="location">
+                            <label style="font-size: 15px;"><b>Oficina - </b> Carrera 66 #55-44 Bancolombia</label>
+                            <button class="delete" (click)="eliminarDireccion()">
+                                                <img src="../../../../assets/perfil/borrardir.png" alt="">
+                                            </button>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                        <mat-list-item>
+                            <img src="../../../../assets/perfil/location.png" alt="" class="location">
+                            <label style="font-size: 15px;"><b>Oficina - </b> Carrera 66 #55-44 Bancolombia</label>
+                            <button class="delete" (click)="eliminarDireccion()">
+                                                <img src="../../../../assets/perfil/borrardir.png" alt="">
+                                            </button>
+                        </mat-list-item>
+                        <!-- <mat-divider></mat-divider> -->
+                    </mat-list>
+                </div>
+                <button (click)="agregarDireccion()" style="margin: 15px auto;">
+                    <img src="../../../../assets/perfil/nuevadir.png" alt="">
+                </button>
+            </div>
+        </mat-card>
+    </div>
+</div>
+
+<mat-card style="background: #eee; padding: 15px 35px;">
+    <app-footer></app-footer>
+</mat-card>
