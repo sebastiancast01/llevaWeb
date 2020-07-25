@@ -12,4 +12,18 @@ export class RegisterPhotosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  cambiarEstado(id) {
+    console.log('estado' + (parseFloat(id) + parseFloat('1')))
+
+    if ((parseFloat(id) + parseFloat('1') > 7)) {
+      console.log('No se puede')
+    } else {
+      var IdEstado = 'estado' + (parseFloat(id) + parseFloat('1'))
+
+      var estado = document.getElementById(IdEstado)
+
+      estado.innerHTML = 'Completado'
+    }
+  }
+
 }

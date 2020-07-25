@@ -18,19 +18,19 @@
                     <mat-list-item role="listitem">
                         <label for="file1">
                             <h3>Cara 1</h3>
-                            <p class="pendiente">Pendiente</p>
+                            <p class="pendiente" id="estado2">Pendiente</p>
                             <img src="../../../../assets/register/arrow.png">
                         </label>
-                        <input type="file" id="file1" style="display: none;">
+                        <input type="file" id="file1" style="display: none;" (change)="cambiarEstado(1)">
                     </mat-list-item>
                     <mat-divider></mat-divider>
                     <mat-list-item role="listitem">
                         <label for="file2">
                             <h3>Cara 2</h3>
-                            <p class="pendiente">Pendiente</p>
+                            <p class="pendiente" id="estado3">Pendiente</p>
                             <img src="../../../../assets/register/arrow.png">
                         </label>
-                        <input type="file" id="file2" style="display: none;">
+                        <input type="file" id="file2" style="display: none;" (change)="cambiarEstado(2)">
                     </mat-list-item>
                 </mat-list>
 
