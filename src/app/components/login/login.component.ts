@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import {Router} from '@angular/router';
-import{GlobalsService} from '../../globals.service';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { GlobalsService } from '../../globals.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 // import {ApiRegisterService} from '../../services/apiRegister/api-register.service';
 
 @Component({
@@ -10,12 +10,12 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
 
   constructor(
     // private apiRegister: ApiRegisterService,
-     private router: Router, private _snackBar: MatSnackBar,
-              private globals:GlobalsService) { }
+    private router: Router, private _snackBar: MatSnackBar,
+    private globals: GlobalsService) { }
 
   public user_name = null;
   public password = null;
@@ -42,26 +42,47 @@ export class LoginComponent implements OnInit{
 
   }
 
+  option(id) {
+    var elemento = document.getElementsByClassName('option')
+    for (var i = 0, len = elemento.length; i < len; i = i + 1) {
+      elemento[i].classList.remove("active")
+    }
+
+    var addcolor = document.getElementById(id)
+    addcolor.classList.add("active")
+
+    var formLogin = document.getElementById('form-login')
+    var formRegister = document.getElementById('form-register')
+
+    if (id == 'login'){
+      formLogin.style.display = 'block'
+      formRegister.style.display = 'none'
+    }else{
+      formRegister.style.display = 'block'
+      formLogin.style.display = 'none'
+    }
+  }
+
   registroEmpresa() {
-    this.globals.tipo_registro=2;
+    this.globals.tipo_registro = 2;
     this.router.navigate(['/phone'])
   }
 
   registroPersona() {
-    this.globals.tipo_registro=1;
+    this.globals.tipo_registro = 1;
     this.router.navigate(['/phone'])
   }
 
   despuesDeEnviarCodigo(_this, data) {
-    console.log( data.person.name);
-    _this.globals.name=data.person.name;
-    _this.globals.id=data.person.id;
+    console.log(data.person.name);
+    _this.globals.name = data.person.name;
+    _this.globals.id = data.person.id;
     _this.globals.setToken(data.access);
     _this.router.navigate(['/home'])
   }
 
   errorHanndler(_this, data) {
     console.log("error " + data.error.message);
-    _this.openSnackBar("Error","Usuario o contraseña incorrectos");
+    _this.openSnackBar("Error", "Usuario o contraseña incorrectos");
   }
 }
