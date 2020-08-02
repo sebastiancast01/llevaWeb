@@ -52,6 +52,7 @@ import { KmsLlevaComponent } from './components/home/profile/kms-lleva/kms-lleva
 import { RecomiendaComponent } from './components/home/profile/recomienda/recomienda.component';
 import { CargaMasivaComponent } from './components/home/carga-masiva/carga-masiva.component';
 import { FooterComponent } from './components/home/footer/footer.component';
+import { ReferidoComponent } from './components/register-aliado/registro/referido/referido.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { FooterComponent } from './components/home/footer/footer.component';
     RecomiendaComponent,
     CargaMasivaComponent,
     FooterComponent,
+    ReferidoComponent,
   ],
   imports: [
     BrowserModule,

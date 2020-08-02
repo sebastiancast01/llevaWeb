@@ -1,44 +1,63 @@
-<div fxLayout="row wrap" fxLayoutAlign="left center" style="width: 100% !important;">
-    <div fxFlex="50" fxFlex.lt-md>
-        <img style="    padding-left: 20px;" src="assets/home/lleva.png">
+<header>
+    <div class="logo">
+        <div class="lleva">
+            <img style="    padding-left: 20px;" src="assets/home/lleva.png">
+        </div>
     </div>
-    <div fxFlex="15" fxFlex.lt-md style="position: relative;">
-        <a routerLink="/servicio-cliente">
-            <img src="assets/home/support.png" style="display: inline">
-            <p class="servicio"> &nbsp;Servicio al cliente</p>
-        </a>
+
+    <div class="bars" (click)="verMenu()" id="bars">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
-    <div fxFlex="15" fxFlex.lt-md style="position: relative;display: flex !important">
-        <img src="assets/home/person.png" style="display: inline">
-        <!-- <p style="display: inline"> &nbsp;{{nombre}}</p> -->
-        <p class="nombre"> &nbsp;Pedro Perez</p>
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="btn-cuenta">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-        <mat-menu #menu="matMenu" style="display: inline">
-            <button mat-menu-item style="display: inline" routerLink="/perfil">
-        <span>Mi cuenta</span>
-      </button>
-            <mat-divider></mat-divider>
-            <button mat-menu-item routerLink="/historial">
-        <span>Historial de servicio</span>
-      </button>
-            <mat-divider></mat-divider>
-            <button mat-menu-item routerLink="/billetera">
-        <span>Billetera virtual</span>
-      </button>
-            <mat-divider></mat-divider>
-            <button mat-menu-item routerLink="/email-certificado">
-        <span>Email certificado</span>
-      </button>
-            <mat-divider></mat-divider>
-            <button mat-menu-item (click)="logout()">
-        <span style="color: #2F8457">Cerrar sesión</span>
-      </button>
-        </mat-menu>
+
+    <div class="close-bars" (click)="closeMenu()" id="close-menu">
+        X
     </div>
-    <div fxFlex="10" fxFlex.lt-md style="position: relative;">
-        <img src="assets/home/solicitar.png">
-        <p class="solicitar">Solicitar servicio</p>
+
+    <div class="menu" id="menu">
+        <nav>
+            <ul>
+                <li class="service">
+                    <a routerLink="/servicio-cliente">
+                        <img src="assets/home/support.png" style="display: inline">
+                        <p class="servicio"> &nbsp;Servicio al cliente</p>
+                    </a>
+                </li>
+                <li class="my-account">
+                    <img src="assets/home/person.png" style="display: inline">
+                    <!-- <p style="display: inline"> &nbsp;{{nombre}}</p> -->
+                    <p class="nombre"> &nbsp;Pedro Perez</p>
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="btn-cuenta">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+                    <mat-menu #menu="matMenu" style="display: inline">
+                        <button mat-menu-item style="display: inline" routerLink="/perfil">
+                            <span>Mi cuenta</span>
+                        </button>
+                        <mat-divider></mat-divider>
+                        <button mat-menu-item routerLink="/historial">
+                            <span>Historial de servicio</span>
+                        </button>
+                        <mat-divider></mat-divider>
+                        <button mat-menu-item routerLink="/billetera">
+                            <span>Billetera virtual</span>
+                        </button>
+                        <mat-divider></mat-divider>
+                        <button mat-menu-item routerLink="/email-certificado">
+                            <span>Email certificado</span>
+                        </button>
+                        <mat-divider></mat-divider>
+                        <button mat-menu-item (click)="logout()">
+                            <span style="color: #2F8457">Cerrar sesión</span>
+                        </button>
+                    </mat-menu>
+                </li>
+                <li class="sol-service">
+                    <img src="assets/home/solicitar.png">
+                    <p class="solicitar">Solicitar servicio</p>
+                </li>
+            </ul>
+        </nav>
     </div>
-</div>
+</header>

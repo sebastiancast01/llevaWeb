@@ -30,3 +30,15 @@ button {
     background: transparent;
     border: 0;
 }
+
+.card-map {
+    margin-left: 15px;
+}
+
+@media (max-width: 950px) {
+    .card-map {
+        margin-left: 0px;
+        margin-top: 15px;
+        display: block;
+    }
+}

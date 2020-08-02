@@ -1,18 +1,75 @@
-.servicio {
-    display: inline;
-    position: absolute;
-    left: 21px;
+header {
+    display: flex;
+    justify-content: space-between;
 }
 
-.nombre {
+.logo {
+    width: 20%;
+}
+
+.bars,
+.close-bars {
+    display: none;
+}
+
+
+/* .menu {
+    width: 80%;
+}
+
+.menu nav {
+    width: 100%;
+} */
+
+.menu nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu nav ul li {
+    width: 210px;
+    display: flex;
+    position: relative;
+}
+
+.menu nav ul li a {
+    display: flex;
+}
+
+.service a img {
+    position: absolute;
+    top: 7px;
+    left: 10px;
+}
+
+.service a p {
+    position: absolute;
+    top: 7px;
+    left: 35px;
+}
+
+.my-account img {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+}
+
+.my-account p {
+    position: absolute;
+    top: 5px;
+    left: 52px;
+}
+
+.my-account button {
     display: inline;
     position: absolute;
-    left: 36px;
-    top: 7px;
+    top: -3px;
+    left: 150px;
 }
 
 .solicitar {
-    display: inline;
     position: absolute;
     top: 3px;
     left: 41px;
@@ -20,8 +77,77 @@
     color: rgb(47, 132, 87);
 }
 
-.btn-cuenta {
-    position: absolute;
-    left: 113px;
-    top: -4px;
+@media (max-width: 850px) {
+    .bars {
+        display: block;
+    }
+    .bars span {
+        border-bottom: 3px solid #000;
+        width: 26px;
+        display: block;
+        margin-top: 5px;
+        border-radius: 15px;
+    }
+    .close-bars {
+        font-size: 25px;
+        margin-top: 10px;
+    }
+    .menu {
+        max-width: 250px;
+        position: absolute;
+        top: 69px;
+        background: #fff;
+        right: 0;
+        z-index: 1;
+        height: 152px;
+        box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+        display: none;
+    }
+    .menu nav ul {
+        display: block;
+        text-align: center;
+    }
+    .menu nav ul li {
+        height: 50px;
+        display: block;
+        border-bottom: 1px solid #eee;
+    }
+    .service a img {
+        position: absolute;
+        top: 13px;
+        left: 17px;
+    }
+    .service a p {
+        position: absolute;
+        top: 14px;
+        left: 50px;
+    }
+    .my-account img {
+        position: absolute;
+        top: 8px;
+        left: 10px;
+    }
+    .my-account p {
+        position: absolute;
+        top: 15px;
+        left: 52px;
+    }
+    .my-account button {
+        display: inline;
+        position: absolute;
+        top: 4px;
+        left: 150px;
+    }
+    .sol-service img {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+    }
+    .solicitar {
+        position: absolute;
+        top: 13px;
+        left: 62px;
+        font-size: 12px;
+        color: rgb(47, 132, 87);
+    }
 }

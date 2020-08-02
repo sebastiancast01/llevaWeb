@@ -1,0 +1,32 @@
+h3 {
+    text-align: center;
+    color: rgb(47, 132, 87);
+    font-size: 25px;
+}
+
+p {
+    text-align: left;
+    font-size: 13px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #FFBF00;
+    color: #fff;
+    border: 0;
+    border-radius: 15px 0;
+}
+
+a {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+    color: rgb(47, 132, 87);
+}
